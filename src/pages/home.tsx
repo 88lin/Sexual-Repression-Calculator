@@ -122,7 +122,6 @@ export default function Home() {
                     完整版测评
                   </Button>
                 </Link>
-              </div>
 
               <a href="https://sri.rstqxq.com" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" variant="outline" className="border-psychology-primary text-psychology-primary hover:bg-psychology-primary hover:text-white transition-colors px-8 py-4 text-lg">
