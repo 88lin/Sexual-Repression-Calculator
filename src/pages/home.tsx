@@ -4,26 +4,24 @@
  */
 
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Github } from "lucide-react";
-import { 
-  Brain, 
-  Clock, 
-  Shield, 
-  Users, 
-  BarChart3, 
-  FileText, 
-  Heart,
-  Zap,
-  CheckCircle,
-  Star,
-  ArrowRight,
-  BookOpen,
-  Target,
-  History
+import {Link} from 'react-router-dom';
+import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card';
+import {Button} from '@/components/ui/button';
+import {Badge} from '@/components/ui/badge';
+import {
+    ArrowRight,
+    BarChart3,
+    BookOpen,
+    Brain,
+    CheckCircle,
+    Clock,
+    FileText,
+    Heart,
+    History,
+    Shield,
+    Target,
+    Users,
+    Zap
 } from 'lucide-react';
 
 export default function Home() {
@@ -51,23 +49,23 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="flex items-center gap-4">
-              <Button variant="ghost" size="sm" asChild>
-                <Link to="/guide">
-                  <BookOpen className="w-4 h-4 mr-2" />
-                  使用指南
+            <div className="flex items-center gap-1 sm:gap-4">
+              <Button variant="ghost" size="sm" asChild className="h-auto py-1.5">
+                <Link to="/guide" className="flex flex-col sm:flex-row items-center gap-0.5 sm:gap-2">
+                  <BookOpen className="w-4 h-4" />
+                  <span className="text-[10px] sm:text-sm">使用指南</span>
                 </Link>
               </Button>
-              <Button variant="ghost" size="sm" asChild>
-                <Link to="/science">
-                  <FileText className="w-4 h-4 mr-2" />
-                  科学依据
+              <Button variant="ghost" size="sm" asChild className="h-auto py-1.5">
+                <Link to="/science" className="flex flex-col sm:flex-row items-center gap-0.5 sm:gap-2">
+                  <FileText className="w-4 h-4" />
+                  <span className="text-[10px] sm:text-sm">科学依据</span>
                 </Link>
               </Button>
-              <Button variant="ghost" size="sm" asChild>
-                <Link to="/history">
-                  <History className="w-4 h-4 mr-2" />
-                  历史记录
+              <Button variant="ghost" size="sm" asChild className="h-auto py-1.5">
+                <Link to="/history" className="flex flex-col sm:flex-row items-center gap-0.5 sm:gap-2">
+                  <History className="w-4 h-4" />
+                  <span className="text-[10px] sm:text-sm">历史记录</span>
                 </Link>
               </Button>
               {/* GitHub 链接 */}
@@ -435,7 +433,7 @@ export default function Home() {
             </div>
             
             <div className="border-t border-muted mt-8 pt-8 text-center text-sm text-muted-foreground">
-              <p>© 2024 性压抑指数计算器. 仅供教育和自我了解使用，不能替代专业心理健康服务。</p>
+              <p>© 2025 性压抑指数计算器. 仅供教育和自我了解使用，不能替代专业心理健康服务。</p>
             </div>
           </div>
         </footer>

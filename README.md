@@ -28,7 +28,7 @@
 ```bash
 # 克隆项目
 git clone [project-url]
-cd sexual-repression-index-calculator
+cd Sexual-Repression-Calculator
 
 # 安装依赖
 npm install
