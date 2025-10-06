@@ -416,7 +416,6 @@ const handleProgressDialogOpenChange = (open: boolean) => {
           </div>
 
           {/* 总体进度条 */}
-          {currentStep !== 'consent' && (
             <div className="mt-4">
               <div className="flex justify-between items-center mb-2">
                 <span className="text-sm text-muted-foreground">整体进度</span>
@@ -424,7 +423,6 @@ const handleProgressDialogOpenChange = (open: boolean) => {
               </div>
               <Progress value={getStepProgress()} className="h-2" />
             </div>
-          )}
         </div>
       </nav>
 
