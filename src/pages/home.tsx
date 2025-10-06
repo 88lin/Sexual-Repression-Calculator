@@ -393,6 +393,7 @@ export default function Home() {
                 </p>
               </div>
               
+              <div className="flex flex-col sm:flex-row justify-center sm:justify-between gap-8 sm:gap-16 text-center sm:text-left px-6 sm:px-0">
               <div>
                 <h4 className="font-semibold mb-3">评估工具</h4>
                 <ul className="space-y-2 text-sm text-muted-foreground">
@@ -401,7 +402,7 @@ export default function Home() {
                   <li><Link to="/history" className="hover:text-psychology-primary">历史记录</Link></li>
                 </ul>
               </div>
-              
+
               <div>
                 <h4 className="font-semibold mb-3">资源</h4>
                 <ul className="space-y-2 text-sm text-muted-foreground">
@@ -410,13 +411,13 @@ export default function Home() {
                   <li><a href="#" className="hover:text-psychology-primary">隐私政策</a></li>
                 </ul>
               </div>
-              
+
               <div>
                 <h4 className="font-semibold mb-3">支持</h4>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li><a href="https://pro.gleeze.com" target="_blank" rel="noopener noreferrer" className="hover:text-psychology-primary">茉灵智库</a></li>
+                  <li><a href="https://simhaoka.com/phone/index?id=7D26597D429AB2941A5743A8008DF8FD" target="_blank" rel="noopener noreferrer" className="hover:text-psychology-primary">流量卡商</a></li>
                   <li><a href="https://github.com/88lin/Sexual-Repression-Calculator" target="_blank" rel="noopener noreferrer" className="hover:text-psychology-primary">GitHub</a></li>
-                  <li><a href="https://simhaoka.com/phone/index?id=7D26597D429AB2941A5743A8008DF8FD" target="_blank" rel="noopener noreferrer" className="hover:text-psychology-primary">大额流量卡</a></li>
                 </ul>
               </div>
             </div>
