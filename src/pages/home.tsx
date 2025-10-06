@@ -392,8 +392,7 @@ export default function Home() {
                   基于科学研究的性压抑指数计算器，帮助您更好地了解自己的性心理健康。
                 </p>
               </div>
-              
-              <div className="flex flex-col sm:flex-row justify-center sm:justify-between gap-8 sm:gap-16 text-center sm:text-left px-6 sm:px-0">
+
               <div>
                 <h4 className="font-semibold mb-3">评估工具</h4>
                 <ul className="space-y-2 text-sm text-muted-foreground">
@@ -411,7 +410,7 @@ export default function Home() {
                   <li><a href="#" className="hover:text-psychology-primary">隐私政策</a></li>
                 </ul>
               </div>
-
+              
               <div>
                 <h4 className="font-semibold mb-3">支持</h4>
                 <ul className="space-y-2 text-sm text-muted-foreground">
