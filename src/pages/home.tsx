@@ -124,6 +124,14 @@ export default function Home() {
                 </Link>
               </div>
 
+              <a href="https://sri.rstqxq.com" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" variant="outline" className="border-psychology-primary text-psychology-primary hover:bg-psychology-primary hover:text-white transition-colors px-8 py-4 text-lg">
+                  <Target className="w-5 h-5 mr-2" />
+                  增强版测评
+                </Button>
+              </a>
+            </div>
+
               {/* 核心指标展示 */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
                 <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-primary/10">
