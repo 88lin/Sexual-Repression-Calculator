@@ -414,9 +414,9 @@ export default function Home() {
               <div>
                 <h4 className="font-semibold mb-3">支持</h4>
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li><a href="#" className="hover:text-psychology-primary">常见问题</a></li>
-                  <li><a href="#" className="hover:text-psychology-primary">专业咨询</a></li>
-                  <li><a href="#" className="hover:text-psychology-primary">危机资源</a></li>
+                  <li><a href="https://pro.gleeze.com" target="_blank" rel="noopener noreferrer" className="hover:text-psychology-primary">茉灵智库</a></li>
+                  <li><a href="https://github.com/88lin/Sexual-Repression-Calculator" target="_blank" rel="noopener noreferrer" className="hover:text-psychology-primary">GitHub</a></li>
+                  <li><a href="https://simhaoka.com/phone/index?id=7D26597D429AB2941A5743A8008DF8FD" target="_blank" rel="noopener noreferrer" className="hover:text-psychology-primary">大额流量卡</a></li>
                 </ul>
               </div>
             </div>
