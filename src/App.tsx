@@ -10,7 +10,7 @@ import Guide from "./pages/guide";
 import Science from "./pages/science";
 import History from "./pages/history";
 import NotFound from "./pages/404";
-import BackToTopButton from "@/components/BackToTopButton";
+import BackToTopButton from "@/components/BackToTopButton"; 
 
 const queryClient = new QueryClient();
 
