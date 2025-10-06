@@ -68,17 +68,6 @@ export default function Home() {
                   <span className="text-[10px] sm:text-sm">历史记录</span>
                 </Link>
               </Button>
-              {/* GitHub 链接 */}
-  <Button variant="ghost" size="sm" asChild>
-    <a 
-      href="https://github.com/88lin/Sexual-Repression-Calculator" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      className="flex items-center"
-    >
-      <Github className="w-4 h-4" />
-    </a>
-  </Button>
             </div>
           </div>
         </nav>
