@@ -78,6 +78,7 @@ export default function Home() {
             <History className="w-4 h-4" />
             历史记录
           </Link>
+          </Button>
       </div>
     </SheetContent>
   </Sheet>
