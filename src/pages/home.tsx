@@ -78,18 +78,6 @@ export default function Home() {
             <History className="w-4 h-4" />
             历史记录
           </Link>
-        </Button>
-        <Button variant="ghost" size="sm" asChild className="justify-start">
-          <a 
-            href="https://github.com/lamos22/Sexual-Repression-Calculator" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="flex items-center gap-2"
-          >
-            <Github className="w-4 h-4" />
-            GitHub仓库地址
-          </a>
-        </Button>
       </div>
     </SheetContent>
   </Sheet>
