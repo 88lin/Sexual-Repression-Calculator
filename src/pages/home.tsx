@@ -11,6 +11,8 @@ import {Badge} from '@/components/ui/badge';
 import { Github } from "lucide-react";
 import {
     ArrowRight,
+    AlertTriangle,
+    AlertOctagon,
     BarChart3,
     BookOpen,
     Brain,
