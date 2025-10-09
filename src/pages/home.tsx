@@ -39,7 +39,9 @@ export default function Home() {
       // 延迟显示弹窗，避免页面加载时立即弹出
       const timer = setTimeout(() => {
         setShowNonProfitModal(true);
-      }, 600);
+        // 阻止页面滚动
+        document.body.style.overflow = 'hidden';
+      }, 500);
       
       return () => clearTimeout(timer);
     }
@@ -49,6 +51,12 @@ export default function Home() {
     // 将确认状态保存到本地存储
     localStorage.setItem('nonProfitConfirmed', 'true');
     setShowNonProfitModal(false);
+    // 恢复页面滚动
+    document.body.style.overflow = 'auto';
+  };
+
+  const handleReport = () => {
+    window.open('https://bx282zvgdvv.feishu.cn/share/base/form/shrcntcJL58vkZJut2iIAHbjSif', '_blank');
   };
 
   return (
