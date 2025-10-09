@@ -66,34 +66,26 @@ export default function Home() {
       showNonProfitModal ? 'h-screen overflow-hidden' : ''
     }`}
   >
-    {/* 非盈利声明弹窗 */}
     {showNonProfitModal && (
       <div className="fixed inset-0 bg-black/60 backdrop-blur-md flex items-center justify-center z-50 p-4">
         <div className="bg-white rounded-3xl max-w-sm sm:max-w-md w-full p-6 sm:p-8 shadow-[0_10px_40px_rgba(0,0,0,0.15)] border border-gray-100 transform transition-all duration-300 scale-100 mx-auto">
           <div className="text-center space-y-6 sm:space-y-8">
-            {/* 图标区域 */}
-            <div className="w-24 h-24 sm:w-28 sm:h-28 bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-full flex items-center justify-center mx-auto mb-2 shadow-inner ring-4 ring-white/70">
-              <Shield className="w-12 h-12 sm:w-14 sm:h-14 text-indigo-600" />
+            <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-full flex items-center justify-center mx-auto mb-2 shadow-inner ring-4 ring-white/70">
+              <Shield className="w-10 h-10 sm:w-12 sm:h-12 text-indigo-600" />
             </div>
-
-            {/* 标题 */}
-            <h2 className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent mb-3 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent mb-3 tracking-tight">
               重要声明
             </h2>
-
-            {/* 主要内容 */}
             <div className="space-y-5 sm:space-y-7 mb-6 sm:mb-8 text-gray-700 leading-relaxed">
               <p className="text-base sm:text-lg md:text-xl font-semibold">
                 <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent font-bold">
                   本工具为完全免费的公益产品，请勿从任何渠道购买！
                 </span>
               </p>
-
-              {/* 警告区域 */}
               <div className="bg-gradient-to-r from-red-50 to-orange-50 border border-red-200/80 p-4 sm:p-5 rounded-2xl shadow-sm">
                 <div className="flex items-start gap-3">
-                  <AlertTriangle className="w-6 h-6 text-red-600 mt-0.5 flex-shrink-0" />
-                  <p className="text-sm sm:text-base md:text-lg text-gray-800 font-medium text-left">
+                  <AlertTriangle className="w-5 h-5 sm:w-5 sm:h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                  <p className="text-xs sm:text-sm md:text-base text-gray-800 font-medium text-left leading-relaxed">
                     <span className="font-bold text-red-600">重要提醒：</span>
                     如果您在任何平台（包括但不限于小红书、闲鱼、淘宝、拼多多、抖音）购买到此网站链接，无论商家标注任何理由，请立刻差评并退款，拒绝倒卖行为！
                   </p>
@@ -101,7 +93,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* 按钮区域 */}
             <div className="space-y-3 sm:space-y-4">
               <Button
                 onClick={handleReport}
