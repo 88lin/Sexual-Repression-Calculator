@@ -77,7 +77,7 @@ export default function Home() {
               重要声明
             </h2>
             <div className="space-y-5 sm:space-y-7 mb-6 sm:mb-8 text-gray-700 leading-relaxed">
-              <p className="text-base sm:text-lg md:text-xl font-semibold">
+              <p className="text-lg sm:text-lg md:text-xl font-semibold">
                 <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent font-bold">
                   本工具为完全免费的公益产品，请勿从任何渠道购买！
                 </span>
@@ -85,7 +85,7 @@ export default function Home() {
               <div className="bg-gradient-to-r from-red-50 to-orange-50 border border-red-200/80 p-4 sm:p-5 rounded-2xl shadow-sm">
                 <div className="flex items-start gap-3">
                   <AlertTriangle className="w-5 h-5 sm:w-5 sm:h-5 text-red-600 mt-0.5 flex-shrink-0" />
-                  <p className="text-xs sm:text-sm md:text-base text-gray-800 font-medium text-left leading-relaxed">
+                  <p className="text-sm sm:text-base md:text-base text-gray-800 font-medium text-left leading-relaxed">
                     <span className="font-bold text-red-600">重要提醒：</span>
                     如果您在任何平台（包括但不限于小红书、闲鱼、淘宝、拼多多、抖音）购买到此网站链接，无论商家标注任何理由，请立刻差评并退款，拒绝倒卖行为！
                   </p>
