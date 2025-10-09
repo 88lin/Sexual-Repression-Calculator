@@ -61,57 +61,60 @@ export default function Home() {
   };
 
   return (
-  <div className={`min-h-screen bg-gradient-to-br from-psychology-calm via-white to-psychology-warm ${showNonProfitModal ? 'h-screen overflow-hidden' : ''}`}>
+  <div
+    className={`min-h-screen bg-gradient-to-br from-psychology-calm via-white to-psychology-warm ${
+      showNonProfitModal ? 'h-screen overflow-hidden' : ''
+    }`}
+  >
     {/* 非盈利声明弹窗 */}
     {showNonProfitModal && (
       <div className="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-50 p-4">
-        <div className="bg-white rounded-3xl max-w-md w-full p-7 shadow-2xl transform transition-all duration-300 scale-100 border border-gray-100 mx-auto">
-          <div className="text-center">
+        <div className="bg-white rounded-3xl max-w-sm sm:max-w-md w-full p-6 sm:p-8 shadow-2xl transform transition-all duration-300 scale-100 border border-gray-100 mx-auto">
+          <div className="text-center space-y-4 sm:space-y-6">
             {/* 图标区域 */}
-            <div className="w-24 h-24 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-full flex items-center justify-center mx-auto mb-5 shadow-inner">
-              <Shield className="w-12 h-12 text-indigo-600" />
+            <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4 shadow-inner">
+              <Shield className="w-10 h-10 sm:w-12 sm:h-12 text-indigo-600" />
             </div>
-            
+
             {/* 标题 */}
-            <h2 className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
+            <h2 className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent mb-3">
               重要声明
             </h2>
-            
+
             {/* 主要内容 */}
-            <div className="space-y-5 mb-6">
-              <p className="text-gray-800 text-lg leading-relaxed font-semibold">
-                <span className="bg-gradient-to-r from-red-600 to-rose-600 bg-clip-text text-transparent">
+            <div className="space-y-4 sm:space-y-6 mb-5">
+              <p className="text-gray-800 text-base sm:text-lg md:text-xl leading-relaxed font-semibold">
+                <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent font-bold">
                   本工具为完全免费的公益产品，请勿从任何渠道购买
                 </span>
               </p>
 
               {/* 警告区域 */}
-              <div className="bg-gradient-to-r from-rose-50 to-orange-50 border border-rose-200 p-4 rounded-xl">
-                <div className="flex items-start gap-3">
-                  <AlertTriangle className="w-5 h-5 text-rose-600 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <p className="text-sm font-bold text-rose-700 mb-1">重要提醒</p>
-                    <p className="text-sm text-gray-700 leading-relaxed">
-                      如果您在任何平台（包括但不限于小红书、闲鱼、淘宝、拼多多、抖音）购买到此网站链接，无论商家标注任何理由，请立刻差评并退款，拒绝倒卖行为！
-                    </p>
-                  </div>
+              <div className="bg-gradient-to-r from-red-50 to-orange-50 border border-red-200 p-3 sm:p-4 rounded-xl">
+                <div className="flex items-start gap-2">
+                  <AlertTriangle className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                  <p className="text-xs sm:text-sm md:text-base text-gray-800 leading-relaxed font-medium text-left">
+                    <span className="font-bold text-red-600">重要提醒：</span>
+                    如果您在任何平台（包括但不限于小红书、闲鱼、淘宝、拼多多、抖音）购买到此网站链接，无论商家标注任何理由，请立刻差评并退款，拒绝倒卖行为！
+                  </p>
                 </div>
               </div>
             </div>
 
             {/* 按钮区域 */}
             <div className="space-y-3">
-              <Button 
+              <Button
                 onClick={handleReport}
-                className="w-full bg-gradient-to-r from-rose-500 to-red-500 hover:from-rose-600 hover:to-red-600 text-white py-3.5 font-semibold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-base"
+                className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white py-3 sm:py-4 font-bold rounded-xl transition-all duration-200 shadow-lg hover:shadow-2xl transform hover:-translate-y-0.5 text-base sm:text-lg flex items-center justify-center gap-1"
               >
-                🚨 举报倒卖信息
+                <span className="text-lg sm:text-xl">🚨</span>
+                举报倒卖信息
               </Button>
-              <Button 
+              <Button
                 onClick={handleConfirm}
-                className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white py-3.5 font-semibold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-base"
+                className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-3 sm:py-4 font-bold rounded-xl transition-all duration-200 shadow-lg hover:shadow-2xl transform hover:-translate-y-0.5 text-base sm:text-lg flex items-center justify-center gap-1"
               >
-                <CheckCircle className="w-5 h-5 inline mr-2" />
+                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6" />
                 我已理解并同意继续使用
               </Button>
             </div>
