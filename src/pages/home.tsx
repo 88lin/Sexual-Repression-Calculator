@@ -60,47 +60,69 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-psychology-calm via-white to-psychology-warm">
-      {/* 非盈利声明弹窗 */}
-      {showNonProfitModal && (
-        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-xl max-w-md w-full p-6 shadow-2xl">
-            <div className="text-center mb-6">
-              <Shield className="w-16 h-16 text-psychology-primary mx-auto mb-4" />
-              <h2 className="text-2xl font-bold text-psychology-primary mb-2">
-                非盈利性声明
-              </h2>
-              <p className="text-gray-600 mb-4">
-                本网站为<strong>非盈利性质</strong>，旨在提供教育和自我了解的性心理健康评估工具。
+  <div className={`min-h-screen bg-gradient-to-br from-psychology-calm via-white to-psychology-warm ${showNonProfitModal ? 'h-screen overflow-hidden' : ''}`}>
+    {/* 非盈利声明弹窗 */}
+    {showNonProfitModal && (
+      <div className="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-50 p-4">
+        <div className="bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl transform transition-all duration-300 scale-100 border border-gray-100">
+          <div className="text-center">
+            {/* 图标区域 */}
+            <div className="w-24 h-24 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
+              <Shield className="w-12 h-12 text-indigo-600" />
+            </div>
+            
+            {/* 标题 */}
+            <h2 className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent mb-4">
+              重要声明
+            </h2>
+            
+            {/* 主要内容 */}
+            <div className="space-y-5 mb-6">
+              <p className="text-gray-800 text-lg leading-relaxed font-medium">
+                <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent font-bold">
+                  本工具为完全免费的公益产品，请勿从任何渠道购买
+                </span>
               </p>
-              <div className="bg-psychology-primary/5 p-4 rounded-lg mb-4 text-left">
-                <div className="flex items-start gap-2 mb-2">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm">所有服务完全免费提供</span>
+              
+              {/* 特性说明 */}
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-5 rounded-xl border border-blue-100 text-left space-y-3">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700 font-medium">所有服务完全免费提供</span>
                 </div>
-                <div className="flex items-start gap-2 mb-2">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm">不接受任何形式的商业赞助</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm">数据仅用于个人教育目的</span>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-emerald-500 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700 font-medium">数据仅供教育和自我了解使用</span>
                 </div>
               </div>
-              <p className="text-sm text-muted-foreground mb-4">
-                  本网站仅作为心理健康教育的辅助工具，所有评估结果仅供参考，
-                  <strong>不能替代专业的心理健康诊断和治疗</strong>。
+
+              {/* 警告区域 */}
+              <div className="bg-gradient-to-r from-orange-50 to-amber-50 border border-amber-200 p-4 rounded-xl">
+                <p className="text-sm text-amber-800 leading-relaxed font-medium">
+                  <span className="font-bold text-amber-900">‼️ 重要提醒</span> 如果您在任何平台（包括但不限于小红书、闲鱼、淘宝、拼多多、抖音）购买到此网站链接，无论商家标注任何理由，请立刻差评并退款，拒绝倒卖行为！
                 </p>
+              </div>
             </div>
-            <Button 
-              onClick={handleConfirm}
-              className="w-full bg-psychology-primary hover:bg-psychology-primary/90 text-white py-3"
-            >
-              我已理解并同意继续使用
-            </Button>
+
+            {/* 按钮区域 */}
+            <div className="space-y-3">
+              <Button 
+                onClick={handleReport}
+                className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white py-3.5 font-semibold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+              >
+                🚨 举报倒卖信息
+              </Button>
+              <Button 
+                onClick={handleConfirm}
+                className="w-full bg-gradient-to-r from-indigo-500 to-blue-500 hover:from-indigo-600 hover:to-blue-600 text-white py-3.5 font-semibold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+              >
+                ✅ 我已理解并同意继续使用
+              </Button>
+            </div>
           </div>
         </div>
-      )}
+      </div>
+    )}
 
       {/* 背景装饰 */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
