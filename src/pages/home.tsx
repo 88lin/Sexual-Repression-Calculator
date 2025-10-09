@@ -64,59 +64,52 @@ export default function Home() {
     {/* 非盈利声明弹窗 */}
     {showNonProfitModal && (
       <div className="fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-50 p-4">
-        <div className="bg-white rounded-3xl max-w-md w-full p-8 shadow-2xl transform transition-all duration-300 scale-100 border border-gray-100">
+        <div className="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl transform transition-all duration-300 scale-100 border border-gray-100 mx-auto">
           <div className="text-center">
             {/* 图标区域 */}
-            <div className="w-24 h-24 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
-              <Shield className="w-12 h-12 text-indigo-600" />
+            <div className="w-20 h-20 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4 shadow-inner">
+              <Shield className="w-10 h-10 text-indigo-600" />
             </div>
             
             {/* 标题 */}
-            <h2 className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent mb-4">
+            <h2 className="text-xl font-bold bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent mb-3">
               重要声明
             </h2>
             
             {/* 主要内容 */}
-            <div className="space-y-5 mb-6">
-              <p className="text-gray-800 text-lg leading-relaxed font-medium">
+            <div className="space-y-4 mb-5">
+              <p className="text-gray-800 text-base leading-relaxed font-medium">
                 <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent font-bold">
                   本工具为完全免费的公益产品，请勿从任何渠道购买
                 </span>
               </p>
-              
-              {/* 特性说明 */}
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-5 rounded-xl border border-blue-100 text-left space-y-3">
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-emerald-500 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700 font-medium">所有服务完全免费提供</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-emerald-500 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700 font-medium">数据仅供教育和自我了解使用</span>
-                </div>
-              </div>
 
               {/* 警告区域 */}
-              <div className="bg-gradient-to-r from-orange-50 to-amber-50 border border-amber-200 p-4 rounded-xl">
-                <p className="text-sm text-amber-800 leading-relaxed font-medium">
-                  <span className="font-bold text-amber-900">‼️ 重要提醒</span> 如果您在任何平台（包括但不限于小红书、闲鱼、淘宝、拼多多、抖音）购买到此网站链接，无论商家标注任何理由，请立刻差评并退款，拒绝倒卖行为！
-                </p>
+              <div className="bg-gradient-to-r from-red-50 to-orange-50 border border-red-200 p-3 rounded-xl">
+                <div className="flex items-start gap-2">
+                  <AlertTriangle className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
+                  <p className="text-xs text-gray-800 leading-relaxed font-medium">
+                    <span className="font-bold text-red-600">重要提醒</span> 如果您在任何平台（包括但不限于小红书、闲鱼、淘宝、拼多多、抖音）购买到此网站链接，无论商家标注任何理由，请立刻差评并退款，拒绝倒卖行为！
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* 按钮区域 */}
-            <div className="space-y-3">
+            <div className="space-y-2">
               <Button 
                 onClick={handleReport}
-                className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white py-3.5 font-semibold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white py-3 font-semibold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm"
               >
-                🚨 举报倒卖信息
+                <AlertOctagon className="w-4 h-4 inline mr-1" />
+                举报倒卖信息
               </Button>
               <Button 
                 onClick={handleConfirm}
-                className="w-full bg-gradient-to-r from-indigo-500 to-blue-500 hover:from-indigo-600 hover:to-blue-600 text-white py-3.5 font-semibold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-3 font-semibold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm"
               >
-                ✅ 我已理解并同意继续使用
+                <CheckCircle className="w-4 h-4 inline mr-1" />
+                我已理解并同意继续使用
               </Button>
             </div>
           </div>
