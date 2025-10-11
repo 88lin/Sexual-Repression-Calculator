@@ -554,7 +554,7 @@ export default function Results() {
               <div>
                 <h4 className="font-semibold text-psychology-warning mb-2">重要提醒</h4>
                 <p className="text-sm text-muted-foreground">
-                  本测评结果仅供参考，不构成医学诊断。SRI指数是基于科学研究的心理测量工具，
+                  本工具的测评结果仅供参考，不构成医学诊断。SRI指数是基于科学研究的心理测量工具，
                   旨在帮助您了解自己的性心理特征。如果您对结果有疑问或需要专业帮助，
                   建议咨询专业的心理健康专家。
                 </p>

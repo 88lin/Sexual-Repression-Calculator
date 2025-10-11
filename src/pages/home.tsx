@@ -42,7 +42,7 @@ export default function Home() {
         setShowNonProfitModal(true);
         // 阻止页面滚动
         document.body.style.overflow = 'hidden';
-      }, 500);
+      }, 300);
       
       return () => clearTimeout(timer);
     }
@@ -143,32 +143,32 @@ export default function Home() {
                     <Menu className="w-5 h-5" />
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right">
-                  <div className="flex flex-col gap-4 mt-4">
-                    <Button variant="ghost" size="sm" asChild className="justify-start">
+                <SheetContent side="right" className="w-[260px] sm:w-[300px] p-4">
+                  <div className="flex flex-col gap-4 mt-4 w-full">
+                    <Button variant="ghost" size="sm" asChild className="justify-start w-full">
                       <Link to="/guide" className="flex items-center gap-2">
                         <BookOpen className="w-4 h-4" />
                         使用指南
                       </Link>
                     </Button>
-                    <Button variant="ghost" size="sm" asChild className="justify-start">
+                    <Button variant="ghost" size="sm" asChild className="justify-start w-full">
                       <Link to="/science" className="flex items-center gap-2">
                         <FileText className="w-4 h-4" />
                         科学依据
                       </Link>
                     </Button>
-                    <Button variant="ghost" size="sm" asChild className="justify-start">
+                    <Button variant="ghost" size="sm" asChild className="justify-start w-full">
                       <Link to="/history" className="flex items-center gap-2">
                         <History className="w-4 h-4" />
                         历史记录
                       </Link>
                     </Button>
-                    <Button variant="ghost" size="sm" asChild className="justify-start">
+                    <Button variant="ghost" size="sm" asChild className="justify-start w-full">
                       <a 
                         href="https://github.com/88lin/Sexual-Repression-Calculator" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2"
+                        className="flex items-center gap-2 w-full"
                       >
                         <Github className="w-4 h-4" />
                         GitHub仓库
