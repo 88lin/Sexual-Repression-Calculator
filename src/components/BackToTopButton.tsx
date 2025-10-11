@@ -40,15 +40,13 @@ export default function BackToTopButton() {
       <button
         onClick={scrollToTop}
         aria-label="回到顶部"
-        className="w-12 h-12 rounded-full
-                   bg-gray-900/30 text-white
-                   backdrop-blur-xl border border-white/30
-                   shadow-lg hover:shadow-xl
-                   flex items-center justify-center
-                   transition-transform duration-300 ease-out
-                   hover:scale-110 active:scale-95
-                   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80
-                   motion-reduce:transition-none"
+        className="w-12 h-12 rounded-full 
+                   bg-psychology-primary text-white 
+                   shadow-md hover:shadow-lg active:shadow-sm 
+                   flex items-center justify-center 
+                   transition-transform transition-shadow duration-300 ease-out 
+                   hover:scale-110 active:scale-95 
+                   animate-in fade-in slide-in-from-bottom-3"
       >
         <ArrowUp className="w-5 h-5" />
       </button>
