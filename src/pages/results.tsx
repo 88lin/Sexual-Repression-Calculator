@@ -611,6 +611,7 @@ export default function Results() {
             <ShareResult 
               session={session}
               variant="outline"
+              size="default"
             />
           )}
         </div>

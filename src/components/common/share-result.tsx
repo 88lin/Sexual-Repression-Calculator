@@ -85,10 +85,10 @@ export function ShareResult({ session, variant = "outline", size = "default", cl
           <Button 
             variant={variant}
             size={size}
-            className={`flex items-center gap-2 ${className || ""}`}
+            className={`items-center ${className || ""}`}
             {...props}
           >
-            <Share2 className="w-4 h-4" />
+            <Share2 className="w-4 h-4 mr-2" />
             <span className="hidden sm:inline">分享结果</span>
           </Button>
         </DialogTrigger>

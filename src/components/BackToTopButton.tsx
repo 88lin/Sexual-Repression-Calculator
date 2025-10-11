@@ -34,20 +34,20 @@ export default function BackToTopButton() {
   return (
     <div
       // 固定右下角，层级极高，保证覆盖掉评测页面内旧按钮
-      className={`fixed bottom-16 right-6 z-[9999] transition-[opacity,transform] duration-300 ease-out ${
+      className={`fixed bottom-24 right-6 z-[9999] transition-[opacity,transform] duration-300 ease-out ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}`}
     >
       <button
         onClick={scrollToTop}
         aria-label="回到顶部"
         className="w-12 h-12 rounded-full
-                   bg-white/15 text-white
-                   backdrop-blur-xl border border-white/25
+                   bg-gray-900/30 text-white
+                   backdrop-blur-xl border border-white/30
                    shadow-lg hover:shadow-xl
                    flex items-center justify-center
                    transition-transform duration-300 ease-out
                    hover:scale-110 active:scale-95
-                   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60
+                   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80
                    motion-reduce:transition-none"
       >
         <ArrowUp className="w-5 h-5" />
