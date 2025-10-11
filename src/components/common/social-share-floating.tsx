@@ -79,7 +79,7 @@ export function SocialShareFloating({ session, className }: SocialShareFloatingP
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
         <Button
-          size="lg"
+          size="icon"
           className={`fixed bottom-6 right-6 z-50 rounded-full h-12 w-12 shadow-lg bg-psychology-primary hover:bg-psychology-primary/90 ${className}`}
         >
           <Share2 className="w-6 h-6" />
