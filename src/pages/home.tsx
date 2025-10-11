@@ -8,7 +8,6 @@ import {Link} from 'react-router-dom';
 import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card';
 import {Button} from '@/components/ui/button';
 import {Badge} from '@/components/ui/badge';
-import { Github } from "lucide-react";
 import {
     ArrowRight,
     AlertTriangle,
@@ -22,11 +21,13 @@ import {
     History,
     Shield,
     Target,
+    Github,
+    Menu,
+    MessageCircleMore,
     Users,
     Crown,
     Zap
 } from 'lucide-react';
-import { Menu } from 'lucide-react'; // 添加菜单图标
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 export default function Home() {
@@ -165,7 +166,18 @@ export default function Home() {
                     </Button>
                     <Button variant="ghost" size="sm" asChild className="justify-start">
                       <a 
-                        href="https://github.com/88lin/Sexual-Repression-Calculator" 
+                        href="https://home.nuaa.tech/gzh/index.html"
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2"
+                      >
+                        <MessageCircleMore className="w-4 h-4" />
+                        微信公众号
+                      </a>
+                    </Button>
+                    <Button variant="ghost" size="sm" asChild className="justify-start">
+                      <a 
+                        href="https://github.com/88lin/Sexual-Repression-Calculator"
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="flex items-center gap-2"
@@ -198,7 +210,19 @@ export default function Home() {
                   <span className="text-[10px] sm:text-sm">历史记录</span>
                 </Link>
               </Button>
-              {/* GitHub 链接 */}
+              {/* 微信公众号按钮 */}
+              <Button variant="ghost" size="sm" asChild className="h-auto py-1.5">
+                <a 
+                  href="https://home.nuaa.tech/gzh/index.html" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex flex-col sm:flex-row items-center gap-0.5 sm:gap-2"
+                >
+                  <MessageCircleMore className="w-4 h-4" />
+                  <span className="text-[10px] sm:text-sm whitespace-nowrap">微信公众号</span>
+                </a>
+              </Button>
+              {/* GitHub 按钮 */}
               <Button variant="ghost" size="sm" asChild>
                 <a 
                   href="https://github.com/88lin/Sexual-Repression-Calculator" 
@@ -530,17 +554,18 @@ export default function Home() {
         {/* 页脚 */}
         <footer className="border-t border-muted bg-white/50 backdrop-blur-sm">
           <div className="container mx-auto px-4 py-8">
-            <div className="grid md:grid-cols-4 gap-8">
-              <div>
-                <div className="flex items-center gap-2 mb-4">
+            <div className="grid gap-8 text-center md:text-left md:grid-cols-4">
+                <div className="md:col-span-1">
+                  <div className="flex justify-center md:justify-start items-center gap-2 mb-4">
                   <Brain className="w-6 h-6 text-psychology-primary" />
                   <span className="font-bold text-psychology-primary">SRI Calculator</span>
                 </div>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground max-w-xs mx-auto md:mx-0">
                   基于科学研究的性压抑指数计算器，帮助您更好地了解自己的性心理健康。
                 </p>
               </div>
 
+            <div className="grid grid-cols-3 gap-6 md:col-span-3">
               <div>
                 <h4 className="font-semibold mb-3">评估工具</h4>
                 <ul className="space-y-2 text-sm text-muted-foreground">
@@ -568,6 +593,7 @@ export default function Home() {
                 </ul>
               </div>
             </div>
+          </div>
             
             <div className="border-t border-muted mt-8 pt-8 text-center text-sm text-muted-foreground">
               <p>© 2025 性压抑指数计算器. 仅供教育和自我了解使用，不能替代专业心理健康服务。</p>
