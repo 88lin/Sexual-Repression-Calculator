@@ -251,9 +251,8 @@ export default function Home() {
                 性压抑指数计算器
               </h1>
               
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto text-justify">
-                专业的性心理健康自我评估工具，基于多个经过验证的心理测量量表，
-                帮助您科学地了解自己的性心理特征，促进性健康和亲密关系的发展。
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
+                基于多项权威心理测量量表，助您科学认识性心理特征，促进性健康和亲密关系的发展。
               </p>
               
               {/* 适应性评估亮点 */}
