@@ -22,12 +22,11 @@ import {Brain, CheckCircle2, Copy, Heart, Link, MessageCircle, QrCode, Share2, S
 import {AssessmentSession, SRI_LEVELS} from '@/types';
 import {copyToClipboard, generateQRCode, generateShareText, generateShareUrl, socialShareUrls} from '@/lib/share-utils';
 
-export interface ShareResultProps {
+export interface ShareResultProps extends React.ComponentProps<typeof Button> {
   session: AssessmentSession;
-  className?: string;
 }
 
-export function ShareResult({ session, className }: ShareResultProps) {
+export function ShareResult({ session, variant = "outline", size = "default", className, ...props }: ShareResultProps) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const [qrCodeUrl, setQrCodeUrl] = useState<string | null>(null);
@@ -84,9 +83,10 @@ export function ShareResult({ session, className }: ShareResultProps) {
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <DialogTrigger asChild>
           <Button 
-            variant="outline" 
-            size="sm" 
-            className={`flex items-center gap-2 ${className}`}
+            variant={variant}
+            size={size}
+            className={`flex items-center gap-2 ${className || ""}`}
+            {...props}
           >
             <Share2 className="w-4 h-4" />
             <span className="hidden sm:inline">分享结果</span>

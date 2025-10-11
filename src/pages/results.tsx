@@ -609,8 +609,8 @@ export default function Results() {
           {/* 大尺寸分享按钮（桌面端） */}
           {!isMobile && !isShared && (
             <ShareResult 
-              session={session} 
-              className="bg-psychology-accent hover:bg-psychology-accent/90 text-white border-psychology-accent"
+              session={session}
+              variant="outline"
             />
           )}
         </div>
