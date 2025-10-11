@@ -87,7 +87,7 @@ export default function Home() {
                   <AlertTriangle className="w-5 h-5 sm:w-5 sm:h-5 text-red-600 mt-0.5 flex-shrink-0" />
                   <p className="text-sm sm:text-base md:text-base text-gray-800 font-medium text-left leading-relaxed">
                     <span className="font-bold text-red-600">重要提醒：</span>
-                    如果您在任何平台（包括但不限于小红书、闲鱼、淘宝、拼多多、抖音）购买到此网站链接，无论商家标注任何理由，请立刻申请退款，拒绝倒卖行为！
+                    如果您在任何平台（包括但不限于小红书、闲鱼、淘宝、拼多多、抖音）购买到此网站链接，无论商家标注任何理由，请立即<span className="font-semibold">申请退款</span>，提交倒卖信息，将会联系违法店铺下架或追诉，拒绝倒卖行为！
                   </p>
                 </div>
               </div>
