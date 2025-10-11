@@ -143,7 +143,7 @@ export default function Home() {
                     <Menu className="w-5 h-5" />
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="w-1/2 max-w-sm p-4 right-1/2 translate-x-1/2">
+                <SheetContent side="right" className="w-1/2 max-w-sm p-4">
                   <div className="flex flex-col gap-4 mt-4">
                     <Button variant="ghost" size="sm" asChild className="justify-start">
                       <Link to="/guide" className="flex items-center gap-2">
