@@ -12,6 +12,7 @@ import {Progress} from '@/components/ui/progress';
 import {Separator} from '@/components/ui/separator';
 import {
     AlertCircle,
+    AlertTriangle,
     BarChart3,
     Brain,
     CheckCircle,
@@ -21,7 +22,7 @@ import {
     Info,
     RefreshCw,
     Shield,
-    TrendingUp
+    FileText
 } from 'lucide-react';
 import {AssessmentSession, SRI_LEVELS} from '@/types';
 import {diagnoseStorage, downloadAsJSON, getAssessmentSession} from '@/lib/storage';
@@ -290,7 +291,7 @@ export default function Results() {
               <div className="flex items-center gap-2">
                 <Brain className="w-5 h-5 text-psychology-primary" />
                 <span className="font-semibold text-psychology-primary">
-                  SRI 评估结果
+                  评估结果
                 </span>
               </div>
             </div>
@@ -403,14 +404,14 @@ export default function Results() {
             {session.results.recommendations && session.results.recommendations.length > 0 && (
               <div>
                 <h3 className="font-semibold text-lg mb-3 flex items-center gap-2">
-                  <TrendingUp className="w-5 h-5 text-psychology-primary" />
+                  <Shield className="w-5 h-5 text-psychology-accent" />
                   个性化建议
                 </h3>
-                <div className="space-y-2">
+                <div className="grid gap-3">
                   {session.results.recommendations.map((text, index) => (
-                    <div key={index} className="flex items-start gap-2">
-                      <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                      <p className="text-muted-foreground leading-relaxed">{text}</p>
+                    <div key={index} className="flex items-start gap-3 p-3 bg-emerald-500/5 rounded-lg">
+                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <p className="text-muted-foreground">{text}</p>
                     </div>
                   ))}
                 </div>
@@ -480,8 +481,8 @@ export default function Results() {
         <Card className="sri-card">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Shield className="w-5 h-5 text-psychology-primary" />
-              详细分数
+              <FileText className="w-5 h-5 text-psychology-accent" />
+              量表得分详情
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -489,17 +490,23 @@ export default function Results() {
               {sri.scaleScores.map((score) => {
                 const scale = ALL_SCALES[score.scaleId];
                 if (!scale) return null;
+                // 分数与百分位健壮化处理
+                const raw = (typeof score?.rawScore === "number" && isFinite(score.rawScore)) ? score.rawScore : "—";
+                const z   = (typeof score?.zScore  === "number" && isFinite(score.zScore))  ? score.zScore.toFixed(2) : "—";
+                let p = (typeof score?.percentile === "number" && isFinite(score.percentile)) ? score.percentile : null;
+                if (p !== null && p <= 1) p = p * 100; // 兼容 0–1 小数形式
+                const pText = p !== null ? `${Math.round(p)}%` : "";
                 
                 return (
                   <div key={score.scaleId} className="flex items-center justify-between p-4 bg-muted/30 rounded-lg">
                     <div>
                       <h4 className="font-medium">{scale.name}</h4>
-                      <p className="text-sm text-muted-foreground">{scale.description}</p>
+                      <p className="text-xs text-muted-foreground">{scale.description}</p>
                     </div>
                     <div className="text-right">
-                      <div className="text-lg font-semibold">{score.rawScore}</div>
-                      <div className="text-xs text-muted-foreground">z: {score.zScore.toFixed(2)}</div>
-                      <div className="text-xs text-muted-foreground">第{score.percentile.toFixed(0)}百分位</div>
+                      <div className="text-sm font-semibold text-psychology-secondary">{raw}</div>
+                      <div className="text-xs text-muted-foreground">z={z}</div>
+                      <div className="text-xs text-muted-foreground">{pText}</div>
                     </div>
                   </div>
                 );
@@ -540,19 +547,16 @@ export default function Results() {
         </Card>
 
         {/* 重要声明 */}
-        <Card className="sri-card border-yellow-200 bg-yellow-50/50">
+        <Card className="sri-card border-psychology-warning/20 bg-psychology-warning/5">
           <CardContent className="p-6">
             <div className="flex items-start gap-3">
-              <AlertCircle className="w-5 h-5 text-yellow-600 mt-0.5 flex-shrink-0" />
-              <div className="space-y-2 text-sm">
-                <h4 className="font-semibold text-yellow-800">重要声明</h4>
-                <p className="text-yellow-700 leading-relaxed">
+              <AlertTriangle className="w-5 h-5 text-psychology-warning mt-0.5 flex-shrink-0" />
+              <div>
+                <h4 className="font-semibold text-psychology-warning mb-2">重要提醒</h4>
+                <p className="text-sm text-muted-foreground">
                   本测评结果仅供参考，不构成医学诊断。SRI指数是基于科学研究的心理测量工具，
                   旨在帮助您了解自己的性心理特征。如果您对结果有疑问或需要专业帮助，
                   建议咨询专业的心理健康专家。
-                </p>
-                <p className="text-yellow-700 leading-relaxed">
-                  您的所有数据都安全地保存在本地设备上，我们不会收集或传输您的个人信息。
                 </p>
               </div>
             </div>
