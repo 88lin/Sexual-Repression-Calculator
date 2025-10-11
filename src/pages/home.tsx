@@ -86,9 +86,9 @@ export default function Home() {
               <div className="bg-gradient-to-r from-red-50 to-orange-50 border border-red-200/80 p-4 sm:p-5 rounded-2xl shadow-sm">
                 <div className="flex items-start gap-3">
                   <AlertTriangle className="w-5 h-5 sm:w-5 sm:h-5 text-red-600 mt-0.5 flex-shrink-0" />
-                  <p className="text-sm sm:text-base md:text-base text-gray-800 font-medium text-left leading-relaxed">
+                  <p className="text-sm sm:text-base md:text-base text-gray-800 font-medium text-left leading-relaxed text-justify">
                     <span className="font-bold text-red-600">重要提醒：</span>
-                    如果您在任何平台（包括但不限于小红书、闲鱼、淘宝、拼多多、抖音）购买到此网站链接，无论商家标注任何理由，请立即<span className="font-semibold">申请退款</span>，提交倒卖信息，将会联系违法店铺下架或追诉，拒绝倒卖行为！
+                    若您在任何平台购买到本站链接，无论商家标注何种理由，请立即<span className="font-semibold">申请退款</span>，并举报倒卖信息，将会联系违法店铺下架或追诉，拒绝倒卖行为！同时，恳请您积极宣传本站，共同抵制不法商家借机牟利的行为。
                   </p>
                 </div>
               </div>
