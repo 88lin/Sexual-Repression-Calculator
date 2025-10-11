@@ -421,10 +421,10 @@ export default function Results() {
         </Card>
 
         {/* 四维度分析 */}
-        <Card className="sri-card">
+        <Card className="sri-card border-2 border-psychology-primary/20">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <BarChart3 className="w-5 h-5 text-psychology-primary" />
+              <BarChart3 className="w-5 h-5 text-psychology-secondary" />
               四维度分析
             </CardTitle>
           </CardHeader>
@@ -478,7 +478,7 @@ export default function Results() {
         </Card>
 
         {/* 量表分数详情 */}
-        <Card className="sri-card">
+        <Card className="sri-card border-2 border-psychology-primary/20">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <FileText className="w-5 h-5 text-psychology-accent" />
@@ -498,7 +498,7 @@ export default function Results() {
                 const pText = p !== null ? `${Math.round(p)}%` : "";
                 
                 return (
-                  <div key={score.scaleId} className="flex items-center justify-between p-4 bg-muted/30 rounded-lg">
+                  <div key={score.scaleId} className="flex items-center justify-between p-4 rounded-lg border border-psychology-secondary/10">
                     <div>
                       <h4 className="font-medium">{scale.name}</h4>
                       <p className="text-xs text-muted-foreground">{scale.description}</p>
@@ -516,7 +516,7 @@ export default function Results() {
         </Card>
 
         {/* 评估信息 */}
-        <Card className="sri-card">
+        <Card className="sri-card border-2 border-psychology-primary/20">
           <CardHeader>
             <CardTitle className="text-lg">评估信息</CardTitle>
           </CardHeader>
@@ -553,7 +553,7 @@ export default function Results() {
               <AlertTriangle className="w-5 h-5 text-psychology-warning mt-0.5 flex-shrink-0" />
               <div>
                 <h4 className="font-semibold text-psychology-warning mb-2">重要提醒</h4>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground text-justify">
                   本工具的测评结果仅供参考，不构成医学诊断。SRI指数是基于科学研究的心理测量工具，
                   旨在帮助您了解自己的性心理特征。如果您对结果有疑问或需要专业帮助，
                   建议咨询专业的心理健康专家。
