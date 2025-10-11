@@ -392,7 +392,7 @@ export default function Results() {
                 </h3>
                 <div className="space-y-2">
                   {session.results.interpretation.map((text, index) => (
-                    <p key={index} className="text-muted-foreground leading-relaxed">
+                    <p key={index} className="text-muted-foreground leading-relaxed text-justify">
                       {text}
                     </p>
                   ))}

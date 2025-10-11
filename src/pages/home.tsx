@@ -227,7 +227,7 @@ export default function Home() {
                 性压抑指数计算器
               </h1>
               
-              <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto text-justify">
                 专业的性心理健康自我评估工具，基于多个经过验证的心理测量量表，
                 帮助您科学地了解自己的性心理特征，促进性健康和亲密关系的发展。
               </p>
@@ -240,7 +240,7 @@ export default function Home() {
                   </div>
                   <div className="text-left">
                     <h3 className="font-semibold text-psychology-primary mb-2">智能适应性评估</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <p className="text-sm text-muted-foreground leading-relaxed text-justify">
                       系统会根据您的年龄段和个人背景自动选择最适合的量表组合，为14-17岁青少年提供专门的保护机制，
                       为无性经验用户提供文化敏感的评估内容，确保每个人都能获得准确和适宜的评估体验。
                     </p>

@@ -79,7 +79,7 @@ export default function Science() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-4">
                   <h3 className="text-lg font-semibold text-foreground">双控制模型 (Dual Control Model)</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-muted-foreground text-sm leading-relaxed text-justify">
                     由Janssen等人(2002)提出的性反应双控制模型，认为人类性反应受到性兴奋系统(SES)和性抑制系统(SIS)的双重调节。
                     该模型为理解个体性行为差异提供了重要的理论框架。
                   </p>
@@ -90,7 +90,7 @@ export default function Science() {
                 </div>
                 <div className="space-y-4">
                   <h3 className="text-lg font-semibold text-foreground">性压抑概念</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-muted-foreground text-sm leading-relaxed text-justify">
                     性压抑是指个体对性冲动、性欲望和性行为的系统性抑制，通常源于心理、社会文化和道德因素的综合影响。
                     现代心理学研究表明，适度的性抑制是正常的，但过度压抑可能影响心理健康。
                   </p>
@@ -136,7 +136,7 @@ export default function Science() {
                     {
                       name: "KISS-9性羞耻量表",
                       fullName: "Kyle Inventory of Sexual Shame",
-                      items: "9项", 
+                      items: " 9项", 
                       author: "Kyle et al. (2013)",
                       reliability: "α = 0.92-0.95",
                       desc: "测量个体对性身份、性想法和性行为的羞耻体验，捕捉深层的性自我概念问题。",
@@ -197,14 +197,14 @@ export default function Science() {
                 </div>
                 <div className="bg-muted/30 p-4 rounded-lg">
                   <h4 className="font-semibold text-foreground mb-2">z分数标准化</h4>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-muted-foreground text-justify">
                     采用基于人群常模的z分数标准化方法，将各维度分数转换为标准正态分布，
                     确保不同量表分数的可比性和合成指数的统计学意义。
                   </p>
                 </div>
                 <div className="bg-muted/30 p-4 rounded-lg">
                   <h4 className="font-semibold text-foreground mb-2">SRI合成计算</h4>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-muted-foreground text-justify">
                     通过等权重合成四个维度的z分数，再经过标准正态累积分布函数(CDF)转换为0-100的百分位数，
                     提供直观易懂的性压抑指数。
                   </p>
