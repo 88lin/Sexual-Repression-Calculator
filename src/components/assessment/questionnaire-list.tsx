@@ -471,6 +471,7 @@ const getResponseForQuestion = useCallback((id: string) => {
                     key={question.id}
                     id={`question-${question.id}`}
                     className={`
+                      scroll-mt-24
                       p-6 rounded-lg border-2 transition-all duration-200
                       ${isAnswered 
                         ? 'bg-green-50 border-green-200' 
@@ -522,21 +523,29 @@ const getResponseForQuestion = useCallback((id: string) => {
                             <div 
                               key={option.value}
                               className={`
-                                flex items-center p-2 sm:p-3 rounded-lg border-2 transition-all duration-200 cursor-pointer hover:bg-white/50 select-none active:scale-[0.98]
+                                relative flex items-center p-2 sm:p-3 rounded-lg border-2 transition-all duration-200 cursor-pointer select-none
                                 ${isSelected 
                                   ? 'bg-white border-psychology-primary shadow-sm' 
-                                  : 'bg-white/30 border-gray-300 hover:border-gray-400'
+                                  : 'bg-white/30 border-gray-300 hover:border-gray-400 hover:bg-white/50'
                                 }
                               `}
                             >
+                              <input
+                                type="radio"
+                                name={`q-${question.id}`}
+                                value={option.value}
+                                checked={isSelected}
+                                onChange={() => handleAnswer(question.id, option.value)}
+                                className="absolute inset-0 opacity-0 cursor-pointer"
+                              />
                               <RadioGroupItem 
                                 value={option.value.toString()} 
                                 id={`${question.id}-option-${option.value}`}
-                                className="shrink-0"
+                                className="shrink-0 pointer-events-none"
                               />
                               <Label 
                                 htmlFor={`${question.id}-option-${option.value}`}
-                                className="ml-2 sm:ml-3 cursor-pointer text-xs sm:text-sm font-medium flex-1 leading-tight"
+                                className="ml-2 sm:ml-3 text-xs sm:text-sm font-medium flex-1 leading-tight cursor-pointer"
                               >
                                 {option.label}
                               </Label>
