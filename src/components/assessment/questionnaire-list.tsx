@@ -14,6 +14,7 @@ import {Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader,} f
 import {AlertCircle, ArrowLeft, BarChart3, CheckCircle, ChevronLeft, ChevronRight} from 'lucide-react';
 import {Demographics, Question, Response} from '@/types';
 import {ALL_SCALES, getAdaptiveFullScales, getAdaptiveScales, getUserGroupDescription} from '@/lib/scales';
+import { toast } from "sonner";
 
 interface QuestionnaireListProps {
   type: 'quick' | 'full';
@@ -151,6 +152,7 @@ export function QuestionnaireList({
   }, [scaleIds]);
 
   const [scrollToQuestionId, setScrollToQuestionId] = useState<string | null>(null);
+  const [highlightQuestionId, setHighlightQuestionId] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(0);
   const [lastSaved, setLastSaved] = useState<Date | null>(null);
   const [showBackConfirm, setShowBackConfirm] = useState(false);
@@ -230,6 +232,18 @@ export function QuestionnaireList({
 
     return () => window.clearTimeout(timer);
   }, [scrollToQuestionId, usesPagination, currentPage]);
+
+  // 获取指定题目的回答
+  const responsesMap = useMemo(() => {
+  const m = new Map<string, Response>();
+  for (const r of responses) m.set(r.questionId, r);
+  return m;
+}, [responses]);
+
+const getResponseForQuestion = useCallback((id: string) => {
+  return responsesMap.get(id);
+}, [responsesMap]);
+
   const resumeHandledRef = useRef<number | null>(null);
 
   useEffect(() => {
@@ -258,18 +272,7 @@ export function QuestionnaireList({
     }
 
     setScrollToQuestionId(firstUnanswered.id);
-  }, [resumeToken, responses, allQuestions, usesPagination, questionsPerPage, currentPage]);
-
-  // 获取指定题目的回答
-  const responsesMap = useMemo(() => {
-  const m = new Map<string, Response>();
-  for (const r of responses) m.set(r.questionId, r);
-  return m;
-}, [responses]);
-
-const getResponseForQuestion = useCallback((id: string) => {
-  return responsesMap.get(id);
-}, [responsesMap]);
+  }, [resumeToken, responsesMap, allQuestions, usesPagination, questionsPerPage, currentPage]);
 
   // 处理回答
   const handleAnswer = (questionId: string, value: number) => {
@@ -306,22 +309,20 @@ const getResponseForQuestion = useCallback((id: string) => {
           if (targetPage !== currentPage) {
             setCurrentPage(targetPage);
             setTimeout(() => {
-              document.getElementById(`question-${firstUnanswered.id}`)?.scrollIntoView({
-                behavior: 'smooth',
-                block: 'center'
-              });
-            }, 120);
-            return;
-          }
+              document.getElementById(`question-${firstUnanswered.id}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 150);
+        } else {
+          document.getElementById(`question-${firstUnanswered.id}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
-        
-        document.getElementById(`question-${firstUnanswered.id}`)?.scrollIntoView({
-          behavior: 'smooth',
-          block: 'center'
-        });
+      } else {
+        document.getElementById(`question-${firstUnanswered.id}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
-      
-      alert(`还有 ${stats.requiredUnanswered} 道必答题未完成，请继续填写。`);
+
+      setHighlightQuestionId(firstUnanswered.id);
+      window.setTimeout(() => setHighlightQuestionId(null), 1200);
+    }
+
+      toast.error(`还有 ${stats.requiredUnanswered} 道必答题未完成，请继续填写。`);
       return;
     }
     
@@ -477,6 +478,7 @@ const getResponseForQuestion = useCallback((id: string) => {
                           ? 'bg-red-50 border-red-200'
                           : 'bg-gray-50 border-gray-200'
                       }
+                      ${highlightQuestionId === question.id ? 'ring-2 ring-red-400 animate-pulse' : ''}
                     `}
                   >
                     {/* 题目头部 */}
@@ -599,7 +601,6 @@ const getResponseForQuestion = useCallback((id: string) => {
                 )}
                 <Button
                   onClick={handleComplete}
-                  disabled={stats.requiredUnanswered > 0}
                   className="bg-psychology-primary hover:bg-psychology-primary/90 px-8 transition-all hover:scale-105"
                   size="lg"
                 >
