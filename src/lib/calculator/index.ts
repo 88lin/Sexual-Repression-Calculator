@@ -387,7 +387,7 @@ export function calculateAssessmentResults(
 function generateInterpretation(sri: SRIResult): string[] {
   const level = SRI_LEVELS[sri.level];
   const interpretation = [
-    `您的性压抑指数为 ${sri.totalScore} 分，处于「${level.label}」水平。`,
+    `您的性压抑指数为${sri.totalScore}分，处于${level.label}水平。`,
     `这表明您在性相关的心理体验方面${getInterpretationByLevel(sri.level)}。`
   ];
   
