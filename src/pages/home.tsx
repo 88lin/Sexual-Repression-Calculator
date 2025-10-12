@@ -28,7 +28,7 @@ import {
     Crown,
     Zap
 } from 'lucide-react';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 
 export default function Home() {
   // 添加非盈利声明弹窗状态
@@ -146,24 +146,31 @@ export default function Home() {
                 </SheetTrigger>
                 <SheetContent side="right" className="w-1/2 max-w-sm p-4">
                   <div className="flex flex-col gap-4 mt-4">
+                  <SheetClose asChild>
                     <Button variant="ghost" size="sm" asChild className="justify-start">
                       <Link to="/guide" className="flex items-center gap-2">
                         <BookOpen className="w-4 h-4" />
                         使用指南
                       </Link>
                     </Button>
+                  </SheetClose>
+                  <SheetClose asChild>
                     <Button variant="ghost" size="sm" asChild className="justify-start">
                       <Link to="/science" className="flex items-center gap-2">
                         <FileText className="w-4 h-4" />
                         科学依据
                       </Link>
                     </Button>
+                  </SheetClose>
+                  <SheetClose asChild>
                     <Button variant="ghost" size="sm" asChild className="justify-start">
                       <Link to="/history" className="flex items-center gap-2">
                         <History className="w-4 h-4" />
                         历史记录
                       </Link>
                     </Button>
+                  </SheetClose>
+                  <SheetClose asChild>
                     <Button variant="ghost" size="sm" asChild className="justify-start">
                       <a 
                         href="https://home.nuaa.tech/gzh/index.html"
@@ -175,6 +182,8 @@ export default function Home() {
                         微信公众号
                       </a>
                     </Button>
+                  </SheetClose>
+                  <SheetClose asChild>
                     <Button variant="ghost" size="sm" asChild className="justify-start">
                       <a 
                         href="https://github.com/88lin/Sexual-Repression-Calculator"
@@ -186,6 +195,7 @@ export default function Home() {
                         GitHub仓库
                       </a>
                     </Button>
+                  </SheetClose>
                   </div>
                 </SheetContent>
               </Sheet>
