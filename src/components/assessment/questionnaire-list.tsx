@@ -3,7 +3,7 @@
  * 提供完整的题目概览和横向选项布局
  */
 
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
 import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card';
 import {Button} from '@/components/ui/button';
 import {RadioGroup, RadioGroupItem} from '@/components/ui/radio-group';
@@ -126,107 +126,6 @@ function PaginationNav({ currentPage, totalPages, onPageChange }: PaginationProp
   );
 }
 
-// 分页导航组件 - 统一的翻页组件，支持快捷翻页
-interface PaginationProps {
-  currentPage: number;
-  totalPages: number;
-  onPageChange: (page: number) => void;
-}
-
-function PaginationNav({ currentPage, totalPages, onPageChange }: PaginationProps) {
-  const canGoPrev = currentPage > 0;
-  const canGoNext = currentPage < totalPages - 1;
-  const scrollContainerRef = React.useRef<HTMLDivElement>(null);
-
-  const goToPrev = () => {
-    if (canGoPrev) {
-      onPageChange(currentPage - 1);
-    }
-  };
-
-  const goToNext = () => {
-    if (canGoNext) {
-      onPageChange(currentPage + 1);
-    }
-  };
-
-  // 当前页变化时，自动滚动到可视区域
-  React.useEffect(() => {
-    if (scrollContainerRef.current) {
-      const container = scrollContainerRef.current;
-      const activeButton = container.querySelector(`[data-page="${currentPage}"]`) as HTMLElement;
-
-      if (activeButton) {
-        // 计算按钮相对于容器的位置
-        const containerWidth = container.clientWidth;
-        const buttonLeft = activeButton.offsetLeft;
-        const buttonWidth = activeButton.offsetWidth;
-
-        // 滚动到按钮居中位置
-        container.scrollTo({
-          left: buttonLeft - containerWidth / 2 + buttonWidth / 2,
-          behavior: 'smooth'
-        });
-      }
-    }
-  }, [currentPage]);
-
-  return (
-    <div className="flex items-center justify-between gap-2 sm:gap-4">
-      <Button
-        variant="outline"
-        onClick={goToPrev}
-        disabled={!canGoPrev}
-        className="flex items-center gap-1 sm:gap-2 transition-all hover:scale-105 disabled:hover:scale-100 shrink-0 h-9 px-2 sm:px-4"
-      >
-        <ChevronLeft className="w-4 h-4" />
-        <span className="hidden sm:inline text-sm">上一页</span>
-      </Button>
-
-      <div className="flex items-center gap-2 flex-1 min-w-0">
-        <span className="text-xs sm:text-sm text-muted-foreground shrink-0 hidden md:inline">
-          {currentPage + 1} / {totalPages}
-        </span>
-        {/* 快捷翻页按钮 - 横向滚动容器 */}
-        <div
-          ref={scrollContainerRef}
-          className="flex gap-1 overflow-x-auto overflow-y-hidden flex-1 py-1"
-          style={{ scrollbarWidth: 'thin' }}
-        >
-          {Array.from({ length: totalPages }, (_, i) => (
-            <button
-              key={i}
-              data-page={i}
-              onClick={() => onPageChange(i)}
-              className={`
-                w-8 h-8 rounded text-xs font-medium transition-all duration-200 shrink-0
-                ${i === currentPage
-                  ? 'bg-psychology-primary text-white scale-110 shadow-md'
-                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200 hover:scale-105'
-                }
-              `}
-              aria-label={`第 ${i + 1} 页`}
-              aria-current={i === currentPage ? 'page' : undefined}
-            >
-              {i + 1}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <Button
-        variant="outline"
-        onClick={goToNext}
-        disabled={!canGoNext}
-        className="flex items-center gap-1 sm:gap-2 transition-all hover:scale-105 disabled:hover:scale-100 shrink-0 h-9 px-2 sm:px-4"
-      >
-        <span className="hidden sm:inline text-sm">下一页</span>
-        <ChevronRight className="w-4 h-4" />
-      </Button>
-    </div>
-  );
-}
-
 export function QuestionnaireList({
   type,
   demographics,
@@ -237,23 +136,19 @@ export function QuestionnaireList({
   resumeToken
 }: QuestionnaireListProps) {
   // 根据用户特征选择适应性量表
-  const getScalesForUser = () => {
-    if (type === 'quick') {
-      return getAdaptiveScales(demographics);
-    } else {
-      return getAdaptiveFullScales(demographics);
-    }
-  };
+  const scaleIds = useMemo(() => {
+    return type === 'quick' ? getAdaptiveScales(demographics) : getAdaptiveFullScales(demographics);
+  }, [type, demographics]);
 
-  const scaleIds = getScalesForUser();
-  const userGroup = getUserGroupDescription(demographics);
+  const userGroup = useMemo(() => getUserGroupDescription(demographics), [demographics]);
   
   // 显示选中的量表信息
-  console.log(`用户群体: ${userGroup}, 选中量表:`, scaleIds);
-  const allQuestions = scaleIds.flatMap(scaleId => {
-    const scale = ALL_SCALES[scaleId];
-    return scale ? scale.questions : [];
-  });
+  const allQuestions = useMemo(() => {
+    return scaleIds.flatMap(scaleId => {
+      const scale = ALL_SCALES[scaleId];
+      return scale ? scale.questions : [];
+    });
+  }, [scaleIds]);
 
   const [scrollToQuestionId, setScrollToQuestionId] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(0);
@@ -300,18 +195,23 @@ export function QuestionnaireList({
   }, [type]);
   
   // 分页设置 - 完整版采用分页模式
-  const usesPagination = type === 'full';
-  const questionsPerPage = usesPagination ? 15 : allQuestions.length;
-  const totalPages = usesPagination ? Math.ceil(allQuestions.length / questionsPerPage) : 1;
+  const usesPagination = useMemo(() => type === 'full', [type]);
+  const questionsPerPage = useMemo(
+    () => (usesPagination ? 15 : allQuestions.length),
+    [usesPagination, allQuestions.length]
+  );
   
-  // 获取当前页的题目
-  const getCurrentPageQuestions = () => {
+  const totalPages = useMemo(
+  () => (usesPagination ? Math.ceil(allQuestions.length / questionsPerPage) : 1),
+  [usesPagination, allQuestions.length, questionsPerPage]
+  );
+
+  const currentPageQuestions = useMemo(() => {
     if (!usesPagination) return allQuestions;
     const startIndex = currentPage * questionsPerPage;
     return allQuestions.slice(startIndex, startIndex + questionsPerPage);
-  };
-  
-  const currentPageQuestions = getCurrentPageQuestions();
+  }, [usesPagination, allQuestions, currentPage, questionsPerPage]);
+
   useEffect(() => {
     if (!scrollToQuestionId) {
       return;
@@ -339,9 +239,7 @@ export function QuestionnaireList({
 
     resumeHandledRef.current = resumeToken;
 
-    const firstUnanswered = allQuestions.find(question =>
-      !responses.some(response => response.questionId === question.id)
-    );
+    const firstUnanswered = allQuestions.find(q => q.required && !responsesMap.has(q.id));
 
     if (!firstUnanswered) {
       return;
@@ -363,9 +261,15 @@ export function QuestionnaireList({
   }, [resumeToken, responses, allQuestions, usesPagination, questionsPerPage, currentPage]);
 
   // 获取指定题目的回答
-  const getResponseForQuestion = (questionId: string) => {
-    return responses.find(r => r.questionId === questionId);
-  };
+  const responsesMap = useMemo(() => {
+  const m = new Map<string, Response>();
+  for (const r of responses) m.set(r.questionId, r);
+  return m;
+}, [responses]);
+
+const getResponseForQuestion = useCallback((id: string) => {
+  return responsesMap.get(id);
+}, [responsesMap]);
 
   // 处理回答
   const handleAnswer = (questionId: string, value: number) => {
@@ -381,25 +285,19 @@ export function QuestionnaireList({
   };
 
   // 获取回答统计
-  const getAnswerStats = () => {
+  const getAnswerStats = useCallback(() => {
     const answered = responses.length;
     const unanswered = allQuestions.length - answered;
-    const requiredUnanswered = allQuestions
-      .filter(q => q.required)
-      .filter(q => !responses.some(r => r.questionId === q.id))
-      .length;
-    
+    const requiredUnanswered = allQuestions.filter(q => q.required && !responsesMap.has(q.id)).length;
     return { answered, unanswered, requiredUnanswered };
-  };
+  }, [responses.length, allQuestions, responsesMap]);
 
   // 完成评估
   const handleComplete = () => {
     const stats = getAnswerStats();
     if (stats.requiredUnanswered > 0) {
       // 滚动到第一个未回答的必答题
-      const firstUnanswered = allQuestions.find(q => 
-        q.required && !responses.some(r => r.questionId === q.id)
-      );
+      const firstUnanswered = allQuestions.find(q => q.required && !responsesMap.has(q.id));
       if (firstUnanswered) {
         // 如果是分页模式，先跳转到对应页面
         if (usesPagination) {
@@ -412,7 +310,7 @@ export function QuestionnaireList({
                 behavior: 'smooth',
                 block: 'center'
               });
-            }, 100);
+            }, 120);
             return;
           }
         }
@@ -433,23 +331,17 @@ export function QuestionnaireList({
   };
 
   // 按量表分组题目 - 根据分页模式调整
-  const questionsByScale = scaleIds.reduce((acc, scaleId) => {
-    const scale = ALL_SCALES[scaleId];
-    if (scale) {
-      if (usesPagination) {
-        // 分页模式：只显示当前页的题目
-        const scaleQuestionsOnPage = scale.questions.filter(q => 
-          currentPageQuestions.some(pq => pq.id === q.id)
-        );
-        if (scaleQuestionsOnPage.length > 0) {
-          acc[scaleId] = scaleQuestionsOnPage;
-        }
-      } else {
-        acc[scaleId] = scale.questions;
-      }
-    }
-    return acc;
-  }, {} as Record<string, Question[]>);
+  const questionsByScale = useMemo(() => {
+    return scaleIds.reduce((acc, scaleId) => {
+      const scale = ALL_SCALES[scaleId];
+      if (!scale) return acc;
+      const qs = usesPagination
+        ? scale.questions.filter(q => currentPageQuestions.some(pq => pq.id === q.id))
+        : scale.questions;
+      if (qs.length) acc[scaleId] = qs;
+      return acc;
+    }, {} as Record<string, Question[]>);
+  }, [scaleIds, usesPagination, currentPageQuestions]);
 
   // 分页导航函数
   const handlePageChange = (newPage: number) => {
@@ -458,8 +350,8 @@ export function QuestionnaireList({
     // 底部切换时不滚动，让用户自己决定
   };
 
-  const stats = getAnswerStats();
-  const progress = (stats.answered / allQuestions.length) * 100;
+  const stats = useMemo(() => getAnswerStats(), [getAnswerStats]);
+  const progress = useMemo(() => (allQuestions.length ? (stats.answered / allQuestions.length) * 100 : 0), [stats.answered, allQuestions.length]);
 
   // 返回上一步 - 二次确认
   const handleBack = () => {
@@ -547,10 +439,8 @@ export function QuestionnaireList({
       {/* 按量表分组显示题目 */}
       {Object.entries(questionsByScale).map(([scaleId, questions]) => {
         const scale = ALL_SCALES[scaleId];
-        const scaleResponses = responses.filter(r => 
-          questions.some(q => q.id === r.questionId)
-        );
-        const scaleProgress = (scaleResponses.length / questions.length) * 100;
+        const answeredCount = questions.reduce((acc, q) => acc + (responsesMap.has(q.id) ? 1 : 0), 0);
+        const scaleProgress = (answeredCount / questions.length) * 100;
 
         return (
           <Card key={scaleId} className="sri-card">
@@ -564,7 +454,7 @@ export function QuestionnaireList({
                 </div>
                 <div className="text-right">
                   <Badge variant="secondary">
-                    {scaleResponses.length} / {questions.length}
+                    {answeredCount} / {questions.length}
                   </Badge>
                   <Progress value={scaleProgress} className="h-1 w-20 mt-2" />
                 </div>
@@ -630,15 +520,6 @@ export function QuestionnaireList({
                             <div 
                               key={option.value}
                               onClick={() => handleAnswer(question.id, option.value)}
-                              onKeyDown={(e) => {
-                                if (e.key === 'Enter' || e.key === ' ') {
-                                  e.preventDefault();
-                                  handleAnswer(question.id, option.value);
-                                }
-                              }}
-                              role="radio"
-                              aria-checked={isSelected}
-                              tabIndex={0}
                               className={`
                                 flex items-center p-2 sm:p-3 rounded-lg border-2 transition-all duration-200 cursor-pointer hover:bg-white/50 select-none active:scale-[0.98]
                                 ${isSelected 
