@@ -88,7 +88,7 @@ export default function Home() {
                   <AlertTriangle className="w-5 h-5 sm:w-5 sm:h-5 text-red-600 mt-0.5 flex-shrink-0" />
                   <p className="text-sm sm:text-base md:text-base text-gray-800 font-medium text-left leading-relaxed text-justify">
                     <span className="font-bold text-red-600">重要提醒：</span>
-                    若您在任何平台购买到本站链接，无论商家标注何种理由，请立即<span className="font-semibold">申请退款</span>，并举报倒卖信息，将会联系违法店铺下架或追诉，拒绝倒卖行为！同时，恳请您积极宣传本站，共同抵制不法商家借机牟利的行为。
+                    若您在任何平台购买到本站链接，无论商家标注何种理由，请立即<span className="font-semibold">申请退款</span>，并举报倒卖信息，将会联系违法店铺下架或追诉，拒绝倒卖行为！同时，也请您积极宣传本站，共同抵制不法商家借机牟利的行为。
                   </p>
                 </div>
               </div>
@@ -223,14 +223,15 @@ export default function Home() {
                 </a>
               </Button>
               {/* GitHub 按钮 */}
-              <Button variant="ghost" size="sm" asChild>
+              <Button variant="ghost" size="sm" asChild className="h-auto py-1.5">
                 <a 
                   href="https://github.com/88lin/Sexual-Repression-Calculator" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center"
+                  className="flex flex-col sm:flex-row items-center gap-0.5 sm:gap-2"
                 >
                   <Github className="w-4 h-4" />
+                  <span className="text-[10px] sm:text-sm whitespace-nowrap">GitHub仓库</span>
                 </a>
               </Button>
             </div>
@@ -566,7 +567,7 @@ export default function Home() {
 
             <div className="grid grid-cols-3 gap-6 md:col-span-3">
               <div>
-                <h4 className="font-semibold mb-3">评估工具</h4>
+                <h4 className="font-semibold mb-3">工具</h4>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li><Link to="/assessment?type=quick" className="hover:text-psychology-primary">快速测评</Link></li>
                   <li><Link to="/assessment?type=full" className="hover:text-psychology-primary">完整测评</Link></li>
@@ -575,7 +576,7 @@ export default function Home() {
               </div>
 
               <div>
-                <h4 className="font-semibold mb-3">资源</h4>
+                <h4 className="font-semibold mb-3">文档</h4>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li><Link to="/guide" className="hover:text-psychology-primary">使用指南</Link></li>
                   <li><Link to="/science" className="hover:text-psychology-primary">科学依据</Link></li>
@@ -584,11 +585,11 @@ export default function Home() {
               </div>
               
               <div>
-                <h4 className="font-semibold mb-3">支持</h4>
+                <h4 className="font-semibold mb-3">资源</h4>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li><a href="#" className="hover:text-psychology-primary">常见问题</a></li>
-                  <li><a href="https://pro.gleeze.com" target="_blank" rel="noopener noreferrer" className="hover:text-psychology-primary">茉灵智库</a></li>
-                  <li><a href="https://simhaoka.com/phone/index?id=7D26597D429AB2941A5743A8008DF8FD" target="_blank" rel="noopener noreferrer" className="hover:text-psychology-primary">流量神卡</a></li>
+                  <li><a href="https://pro.gleeze.com" target="_blank" rel="noopener noreferrer" className="hover:text-psychology-primary">个人博客</a></li>
+                  <li><a href="https://1.simhaoka.com/phone/index?id=7D26597D429AB2941A5743A8008DF8FD" target="_blank" rel="noopener noreferrer" className="hover:text-psychology-primary">流量神卡</a></li>
                 </ul>
               </div>
             </div>

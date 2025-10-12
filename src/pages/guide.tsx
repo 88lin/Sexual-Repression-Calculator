@@ -222,7 +222,7 @@ export default function Guide() {
               <div className="bg-psychology-warning/5 border border-psychology-warning/20 rounded-lg p-4">
                 <div className="space-y-3 text-sm">
                   <div className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 bg-psychology-warning rounded-full mt-2 flex-shrink-0 text-justify"></div>
+                    <div className="w-1.5 h-1.5 bg-psychology-warning rounded-full mt-2 flex-shrink-0"></div>
                     <span><strong>非诊断工具：</strong>SRI指数仅供自我了解和学术研究，不能替代专业心理咨询或医疗诊断</span>
                   </div>
                   <div className="flex items-start gap-2">

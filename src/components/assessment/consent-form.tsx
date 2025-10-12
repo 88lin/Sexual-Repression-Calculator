@@ -199,10 +199,10 @@ export function ConsentForm({ onConsent, onBack, isMinor = false }: ConsentFormP
           )}
 
           {/* 重要提醒 */}
-          <Alert>
-            <AlertTriangle className="h-4 w-4" />
-            <AlertDescription className="text-sm">
-              <strong>重要提醒：</strong>如果您目前正在经历严重的心理困扰、抑郁、焦虑或有自伤倾向，
+          <Alert className="bg-gradient-to-r from-red-50 to-orange-50 border border-red-200/80 p-4 sm:p-5 rounded-2xl shadow-sm flex items-start gap-3">
+            <AlertTriangle className="w-5 h-5 sm:w-5 sm:h-5 text-red-600 mt-0.5 flex-shrink-0" />
+            <AlertDescription className="text-sm text-justify">
+              <strong className="font-bold text-red-600">重要提醒：</strong>如果您目前正在经历严重的心理困扰、抑郁、焦虑或有自伤倾向，
               请立即寻求专业心理健康服务的帮助。本评估不适合处于急性心理危机状态的人群。
             </AlertDescription>
           </Alert>
