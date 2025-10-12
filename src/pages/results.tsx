@@ -410,7 +410,7 @@ export default function Results() {
                 <div className="grid gap-3">
                   {session.results.recommendations.map((text, index) => (
                     <div key={index} className="flex items-start gap-3 p-3 bg-psychology-accent/10 rounded-lg border border-psychology-accent/20">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-psychology-accent mt-0.5 flex-shrink-0" />
                       <p className="text-muted-foreground">{text}</p>
                     </div>
                   ))}
