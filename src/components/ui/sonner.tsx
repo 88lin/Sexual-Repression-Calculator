@@ -16,8 +16,10 @@ const Toaster = ({ ...props }: ToasterProps) => {
       toastOptions={{
         classNames: {
           toast:
-            "max-w-4xl mx-auto rounded-2xl border bg-background px-6 py-4 shadow-lg flex items-center justify-center gap-3 text-center group-[.toaster]:text-foreground group-[.toaster]:border-border",
+            "group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg",
+          title: "w-full text-center",
           description: "group-[.toast]:text-muted-foreground",
+          icon: "mx-auto",
           actionButton:
             "group-[.toast]:bg-primary group-[.toast]:text-primary-foreground",
           cancelButton:

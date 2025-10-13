@@ -635,7 +635,7 @@ const getResponseForQuestion = useCallback((id: string) => {
 
       {/* 返回确认对话框 */}
       <Dialog open={showBackConfirm} onOpenChange={setShowBackConfirm}>
-        <DialogContent className="max-w-[calc(100%-2rem)] sm:max-w-sm">
+        <DialogContent className="max-w-[calc(100%-2rem)] sm:max-w-sm rounded-lg">
           <DialogHeader>
             <DialogDescription className="text-center text-base pt-4">
               您确定要离开答题区域吗？

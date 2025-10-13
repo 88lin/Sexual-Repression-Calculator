@@ -10,7 +10,7 @@ export default function BackToTopButton() {
   const handleScroll = () => {
     if (!ticking) {
       window.requestAnimationFrame(() => {
-        const show = window.scrollY > window.innerHeight * 1.5;
+        const show = window.scrollY > window.innerHeight * 2;
         // 避免无意义的重复 setState
         setVisible(prev => (prev !== show ? show : prev));
         ticking = false;
