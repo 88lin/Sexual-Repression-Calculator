@@ -283,7 +283,7 @@ export default function Results() {
                 variant="ghost"
                 size="sm"
                 onClick={() => navigate('/')}
-                className="text-muted-foreground hover:text-foreground"
+                className="text-muted-foreground hover:text-white"
               >
                 <Home className="w-4 h-4 mr-2" />
                 首页
