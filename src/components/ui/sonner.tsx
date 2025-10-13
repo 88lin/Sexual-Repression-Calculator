@@ -11,11 +11,12 @@ const Toaster = ({ ...props }: ToasterProps) => {
   return (
     <Sonner
       theme={theme as ToasterProps["theme"]}
+      position="top-center"
       className="toaster group"
       toastOptions={{
         classNames: {
           toast:
-            "w-full max-w-6xl mx-auto rounded-xl border bg-background px-6 py-4 shadow-lg flex items-center justify-center gap-3 text-center group-[.toaster]:text-foreground group-[.toaster]:border-border",
+            "max-w-4xl mx-auto rounded-2xl border bg-background px-6 py-4 shadow-lg flex items-center justify-center gap-3 text-center group-[.toaster]:text-foreground group-[.toaster]:border-border",
           description: "group-[.toast]:text-muted-foreground",
           actionButton:
             "group-[.toast]:bg-primary group-[.toast]:text-primary-foreground",
