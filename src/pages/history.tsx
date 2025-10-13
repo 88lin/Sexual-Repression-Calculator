@@ -419,7 +419,7 @@ export default function History() {
                                 <Button 
                                   size="sm" 
                                   variant="ghost" 
-                                  className="flex items-center gap-2 text-destructive hover:text-destructive"
+                                  className="flex items-center gap-2 text-destructive hover:text-white"
                                 >
                                   <Trash2 className="w-4 h-4" />
                                   删除
