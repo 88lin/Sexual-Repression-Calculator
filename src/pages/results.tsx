@@ -311,7 +311,7 @@ export default function Results() {
                 className="text-muted-foreground hidden sm:flex"
               >
                 <Download className="w-4 h-4 mr-2" />
-                下载报告
+                导出结果
               </Button>
               <Button
                 variant="outline"

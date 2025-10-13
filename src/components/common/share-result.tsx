@@ -83,12 +83,11 @@ export function ShareResult({ session, variant = "outline", size = "default", cl
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <DialogTrigger asChild>
           <Button 
-            variant={variant}
-            size={size}
-            className={`items-center ${className || ""}`}
-            {...props}
+            variant="outline"
+            size="sm"
+            className={`flex items-center gap-2 ${className}`}
           >
-            <Share2 className="w-4 h-4 mr-2" />
+            <Share2 className="w-4 h-4" />
             <span className="hidden sm:inline">分享结果</span>
           </Button>
         </DialogTrigger>
@@ -106,7 +105,7 @@ export function ShareResult({ session, variant = "outline", size = "default", cl
 
           <div className="space-y-6">
             {/* 结果预览卡片 */}
-            <Card className="bg-gradient-to-br from-psychology-primary/5 to-psychology-accent/5 border-psychology-primary/20">
+            <Card className="rounded-xl bg-gradient-to-br from-psychology-primary/5 to-psychology-accent/5 border-psychology-primary/20">
               <CardContent className="p-6">
                 <div className="text-center space-y-4">
                   <div className="flex items-center justify-center gap-3">
@@ -168,10 +167,10 @@ export function ShareResult({ session, variant = "outline", size = "default", cl
                   className="flex flex-col items-center gap-2 h-20 bg-blue-50 hover:bg-blue-100 border-blue-200"
                   onClick={() => handleSocialShare('weibo')}
                 >
-                  <div className="w-6 h-6 bg-orange-500 rounded flex items-center justify-center">
-                    <span className="text-white text-xs font-bold">微</span>
+                  <div className="w-8 h-8 bg-orange-500 rounded flex items-center justify-center">
+                    <span className="text-white text-sm font-bold">微</span>
                   </div>
-                  <span className="text-xs">微博</span>
+                  <span className="text-sm text-gray-700">微博</span>
                 </Button>
 
                 <Button
@@ -179,8 +178,8 @@ export function ShareResult({ session, variant = "outline", size = "default", cl
                   className="flex flex-col items-center gap-2 h-20 bg-green-50 hover:bg-green-100 border-green-200"
                   onClick={() => handleSocialShare('wechat')}
                 >
-                  <MessageCircle className="w-6 h-6 text-green-600" />
-                  <span className="text-xs">微信</span>
+                  <MessageCircle className="w-8 h-8 text-green-600" />
+                  <span className="text-sm text-gray-700">微信</span>
                 </Button>
 
                 <Button
@@ -188,10 +187,10 @@ export function ShareResult({ session, variant = "outline", size = "default", cl
                   className="flex flex-col items-center gap-2 h-20 bg-yellow-50 hover:bg-yellow-100 border-yellow-200"
                   onClick={() => handleSocialShare('qzone')}
                 >
-                  <div className="w-6 h-6 bg-yellow-500 rounded flex items-center justify-center">
-                    <span className="text-white text-xs font-bold">Q</span>
+                  <div className="w-8 h-8 bg-yellow-500 rounded flex items-center justify-center">
+                    <span className="text-white text-sm font-bold">Q</span>
                   </div>
-                  <span className="text-xs">QQ空间</span>
+                  <span className="text-sm text-gray-700">QQ空间</span>
                 </Button>
 
                 <Button
@@ -199,8 +198,8 @@ export function ShareResult({ session, variant = "outline", size = "default", cl
                   className="flex flex-col items-center gap-2 h-20 bg-purple-50 hover:bg-purple-100 border-purple-200"
                   onClick={() => handleSocialShare('douban')}
                 >
-                  <Heart className="w-6 h-6 text-purple-600" />
-                  <span className="text-xs">豆瓣</span>
+                  <Heart className="w-8 h-8 text-purple-600" />
+                  <span className="text-sm text-gray-700">豆瓣</span>
                 </Button>
               </div>
             </div>
