@@ -84,6 +84,7 @@ export function ShareResult({ session, variant = "outline", size = "default", cl
         <DialogTrigger asChild>
           <Button 
             variant="outline"
+            size="sm"
             className={`flex items-center gap-2 ${className}`}
           >
             <Share2 className="w-4 h-4 mr-2" />
