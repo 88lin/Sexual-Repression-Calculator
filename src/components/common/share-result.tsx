@@ -84,10 +84,9 @@ export function ShareResult({ session, variant = "outline", size = "default", cl
         <DialogTrigger asChild>
           <Button 
             variant="outline"
-            size="sm"
             className={`flex items-center gap-2 ${className}`}
           >
-            <Share2 className="w-4 h-4" />
+            <Share2 className="w-4 h-4 mr-2" />
             <span className="hidden sm:inline">分享结果</span>
           </Button>
         </DialogTrigger>
@@ -167,7 +166,7 @@ export function ShareResult({ session, variant = "outline", size = "default", cl
                   className="flex flex-col items-center gap-2 h-20 bg-blue-50 hover:bg-blue-100 border-blue-200"
                   onClick={() => handleSocialShare('weibo')}
                 >
-                  <div className="w-8 h-8 bg-orange-500 rounded flex items-center justify-center">
+                  <div className="w-6 h-6 bg-orange-500 rounded flex items-center justify-center">
                     <span className="text-white text-sm font-bold">微</span>
                   </div>
                   <span className="text-sm text-gray-700">微博</span>
@@ -178,7 +177,7 @@ export function ShareResult({ session, variant = "outline", size = "default", cl
                   className="flex flex-col items-center gap-2 h-20 bg-green-50 hover:bg-green-100 border-green-200"
                   onClick={() => handleSocialShare('wechat')}
                 >
-                  <MessageCircle className="w-16 h-16 text-green-600" />
+                  <MessageCircle className="w-6 h-6 text-green-600" />
                   <span className="text-sm text-gray-700">微信</span>
                 </Button>
 
@@ -187,7 +186,7 @@ export function ShareResult({ session, variant = "outline", size = "default", cl
                   className="flex flex-col items-center gap-2 h-20 bg-yellow-50 hover:bg-yellow-100 border-yellow-200"
                   onClick={() => handleSocialShare('qzone')}
                 >
-                  <div className="w-8 h-8 bg-yellow-500 rounded flex items-center justify-center">
+                  <div className="w-6 h-6 bg-yellow-500 rounded flex items-center justify-center">
                     <span className="text-white text-sm font-bold">Q</span>
                   </div>
                   <span className="text-sm text-gray-700">QQ空间</span>
@@ -198,7 +197,7 @@ export function ShareResult({ session, variant = "outline", size = "default", cl
                   className="flex flex-col items-center gap-2 h-20 bg-purple-50 hover:bg-purple-100 border-purple-200"
                   onClick={() => handleSocialShare('douban')}
                 >
-                  <Heart className="w-16 h-16 text-purple-600" />
+                  <Heart className="w-6 h-6 text-purple-600" />
                   <span className="text-sm text-gray-700">豆瓣</span>
                 </Button>
               </div>
