@@ -119,7 +119,7 @@ export function SocialShareFloating({ session, className }: SocialShareFloatingP
               <div className="w-8 h-8 bg-orange-500 rounded flex items-center justify-center">
                 <span className="text-white text-sm font-bold">微</span>
               </div>
-              <span className="text-sm">微博</span>
+              <span className="text-sm text-gray-700">微博</span>
             </Button>
 
             <Button
@@ -128,7 +128,7 @@ export function SocialShareFloating({ session, className }: SocialShareFloatingP
               onClick={() => handleSocialShare('wechat')}
             >
               <MessageCircle className="w-8 h-8 text-green-600" />
-              <span className="text-sm">微信</span>
+              <span className="text-sm text-gray-700">微信</span>
             </Button>
 
             <Button
@@ -139,7 +139,7 @@ export function SocialShareFloating({ session, className }: SocialShareFloatingP
               <div className="w-8 h-8 bg-yellow-500 rounded flex items-center justify-center">
                 <span className="text-white text-sm font-bold">Q</span>
               </div>
-              <span className="text-sm">QQ空间</span>
+              <span className="text-sm text-gray-700">QQ空间</span>
             </Button>
 
             <Button
@@ -150,7 +150,7 @@ export function SocialShareFloating({ session, className }: SocialShareFloatingP
               <div className="w-8 h-8 bg-purple-500 rounded flex items-center justify-center">
                 <span className="text-white text-sm font-bold">豆</span>
               </div>
-              <span className="text-sm">豆瓣</span>
+              <span className="text-sm text-gray-700">豆瓣</span>
             </Button>
           </div>
 
