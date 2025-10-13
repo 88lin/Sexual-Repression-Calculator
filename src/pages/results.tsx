@@ -610,14 +610,6 @@ export default function Results() {
             </Button>
           )}
           
-          {/* 大尺寸分享按钮（桌面端） */}
-          {!isMobile && !isShared && (
-            <ShareResult 
-              session={session}
-              variant="outline"
-              size="default"
-            />
-          )}
         </div>
       </main>
 
