@@ -178,7 +178,7 @@ export function ShareResult({ session, variant = "outline", size = "default", cl
                   className="flex flex-col items-center gap-2 h-20 bg-green-50 hover:bg-green-100 border-green-200"
                   onClick={() => handleSocialShare('wechat')}
                 >
-                  <MessageCircle className="text-green-600" />
+                  <MessageCircle className="w-16 h-16 text-green-600" />
                   <span className="text-sm text-gray-700">微信</span>
                 </Button>
 
@@ -198,7 +198,7 @@ export function ShareResult({ session, variant = "outline", size = "default", cl
                   className="flex flex-col items-center gap-2 h-20 bg-purple-50 hover:bg-purple-100 border-purple-200"
                   onClick={() => handleSocialShare('douban')}
                 >
-                  <Heart className="text-purple-600" />
+                  <Heart className="w-16 h-16 text-purple-600" />
                   <span className="text-sm text-gray-700">豆瓣</span>
                 </Button>
               </div>
