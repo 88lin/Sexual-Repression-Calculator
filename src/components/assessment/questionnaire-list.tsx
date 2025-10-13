@@ -322,7 +322,7 @@ const getResponseForQuestion = useCallback((id: string) => {
       window.setTimeout(() => setHighlightQuestionId(null), 1200);
     }
 
-      toast.error(`还有 ${stats.requiredUnanswered} 道必答题未完成，请继续填写。`);
+      toast.error(`目前还有 ${stats.requiredUnanswered} 道必答题尚未完成哦，请继续填写！`);
       return;
     }
     
