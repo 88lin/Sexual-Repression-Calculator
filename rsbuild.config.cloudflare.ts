@@ -20,7 +20,6 @@ export default defineConfig({
     copy: [
       { from: "./robots.txt", to: "robots.txt" },
       { from: "./sitemap.xml", to: "sitemap.xml" },
-      { from: "./images/Preview_Image.webp", to: "Preview_Image.webp" },
     ],
   },
   resolve: {
