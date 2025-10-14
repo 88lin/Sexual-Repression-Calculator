@@ -379,7 +379,7 @@ const handleProgressDialogOpenChange = (open: boolean) => {
                 variant="ghost"
                 size="sm"
                 onClick={() => navigate('/')}
-                className="text-muted-foreground hover:text-foreground"
+                className="text-muted-foreground"
               >
                 <Home className="w-4 h-4 mr-2" />
                 首页
