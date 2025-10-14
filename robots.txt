@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemapp: https://sextest.nuaa.tech/sitemap.xml

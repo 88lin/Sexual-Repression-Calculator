@@ -17,6 +17,10 @@ export default defineConfig({
       root: "dist",
     },
     legalComments: "none",
+    copy: [
+      { from: "./robots.txt", to: "robots.txt" },
+      { from: "./sitemap.xml", to: "sitemap.xml" },
+    ],
   },
   resolve: {
     alias: {
