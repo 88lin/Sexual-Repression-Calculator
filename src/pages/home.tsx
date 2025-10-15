@@ -31,90 +31,10 @@ import {
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 
 export default function Home() {
-  // 添加非盈利声明弹窗状态
-  const [showNonProfitModal, setShowNonProfitModal] = useState(false);
-
-  useEffect(() => {
-    // 检查用户是否已经确认过非盈利声明
-    const hasConfirmed = localStorage.getItem('nonProfitConfirmed');
-    if (!hasConfirmed) {
-      // 延迟显示弹窗，避免页面加载时立即弹出
-      const timer = setTimeout(() => {
-        setShowNonProfitModal(true);
-        // 阻止页面滚动
-        document.body.style.overflow = 'hidden';
-      }, 300);
-      
-      return () => clearTimeout(timer);
-    }
-  }, []);
-
-  const handleConfirm = () => {
-    // 将确认状态保存到本地存储
-    localStorage.setItem('nonProfitConfirmed', 'true');
-    setShowNonProfitModal(false);
-    // 恢复页面滚动
-    document.body.style.overflow = 'auto';
-  };
-
-  const handleReport = () => {
-    window.open('https://bx282zvgdvv.feishu.cn/share/base/form/shrcntcJL58vkZJut2iIAHbjSif', '_blank');
-  };
 
   return (
   <div
-    className={`min-h-screen bg-gradient-to-br from-psychology-calm/90 via-white to-psychology-warm/80 transition-colors duration-500 ${
-      showNonProfitModal ? 'h-screen overflow-hidden' : ''
-    }`}
-  >
-    {showNonProfitModal && (
-      <div className="fixed inset-0 bg-black/60 backdrop-blur-md flex items-center justify-center z-50 p-4">
-        <div className="bg-white rounded-3xl max-w-sm sm:max-w-md w-full p-6 sm:p-8 shadow-[0_10px_40px_rgba(0,0,0,0.15)] border border-gray-100 transform transition-all duration-300 scale-100 mx-auto">
-          <div className="text-center space-y-6 sm:space-y-8">
-            <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-full flex items-center justify-center mx-auto mb-2 shadow-inner ring-4 ring-white/70">
-              <Shield className="w-10 h-10 sm:w-12 sm:h-12 text-indigo-600" />
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent mb-3 tracking-tight">
-              重要声明
-            </h2>
-            <div className="space-y-5 sm:space-y-7 mb-6 sm:mb-8 text-gray-700 leading-relaxed">
-              <p className="text-lg sm:text-lg md:text-xl font-semibold">
-                <span className="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent font-bold">
-                  本工具为完全免费的公益网站，请勿从任何渠道购买！
-                </span>
-              </p>
-              <div className="bg-gradient-to-r from-red-50 to-orange-50 border border-red-200/80 p-4 sm:p-5 rounded-2xl shadow-sm">
-                <div className="flex items-start gap-3">
-                  <AlertTriangle className="w-5 h-5 sm:w-5 sm:h-5 text-red-600 mt-0.5 flex-shrink-0"/>
-                  <p className="text-sm sm:text-base md:text-base text-gray-800 font-medium text-left leading-relaxed text-justify">
-                    <span className="font-bold text-red-600">重要提醒：</span>
-                    若您在任何平台购买到本站链接，无论商家标注何种理由，请立即<span className="font-semibold">申请退款</span>，并举报倒卖信息，将会联系违法店铺下架或追诉，拒绝倒卖行为！同时，也请您积极宣传本站，共同抵制不法商家借机牟利的行为。
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-3 sm:space-y-4">
-              <Button
-                onClick={handleReport}
-                className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white py-3 sm:py-4 font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-0.5 text-base sm:text-lg flex items-center justify-center gap-2"
-              >
-                <span className="text-lg sm:text-xl">🚨</span>
-                举报倒卖信息
-              </Button>
-              <Button
-                onClick={handleConfirm}
-                className="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white py-3 sm:py-4 font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-0.5 text-base sm:text-lg flex items-center justify-center gap-2"
-              >
-                <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6" />
-                我已理解并同意继续使用
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
-    )}
-
+    className="min-h-screen bg-gradient-to-br from-psychology-calm/90 via-white to-psychology-warm/80 transition-colors duration-500">
       {/* 背景装饰 */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-20 w-8 h-8 bg-psychology-primary/10 rounded-full"></div>
