@@ -67,7 +67,7 @@ ring: "hsl(var(--sidebar-ring))",
 psychology: {
 primary: "hsl(217, 91%, 60%)", // 更现代的蓝色主色
 primary_light: "hsl(217, 91%, 75%)", // 浅一些的主色
-primary_dark: "hsl(217, 91%, 45%)", // 深一些的主色
+primary_dark: "hsl(220, 90%, 56%)", // 深一些的主色
 secondary: "hsl(198, 93%, 50%)", // 清新的蓝绿色辅色 
 accent: "hsl(276, 88%, 75%)", // 柔和的紫色强调
 calm: "hsl(208, 25%, 97%)", // 更柔和的冷静背景

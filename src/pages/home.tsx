@@ -46,7 +46,7 @@ export default function Home() {
       <div className="relative z-10">
         {/* 导航栏 */}
       <nav className="sri-nav-blur sticky top-0 z-50">
-        <nav className="container mx-auto px-4 py-6">
+        <div className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-gradient-to-br from-psychology-primary to-psychology-primary_dark rounded-xl flex items-center justify-center shadow-soft">
@@ -167,7 +167,7 @@ export default function Home() {
               </Button>
             </div>
           </div>
-        </nav>
+        </div>
       </nav>
 
         {/* 主要内容区域 */}
