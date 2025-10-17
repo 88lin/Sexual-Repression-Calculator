@@ -273,14 +273,14 @@ export default function Home() {
                     推荐
                   </div>
                 </div>
-                <CardHeader>
+                <CardHeader className="pb-4">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-12 h-12 bg-psychology-primary/10 rounded-lg flex items-center justify-center">
                       <Zap className="w-6 h-6 text-psychology-primary" />
                     </div>
                     <div>
-                      <CardTitle className="text-xl text-psychology-primary">快速测评版</CardTitle>
-                      <p className="text-sm text-muted-foreground">适合初次使用和快速了解</p>
+                      <CardTitle className="text-xl font-bold text-psychology-primary mb-1">快速测评版</CardTitle>
+                      <p className="text-sm text-muted-foreground font-medium">适合初次使用和快速了解</p>
                     </div>
                   </div>
                 </CardHeader>
