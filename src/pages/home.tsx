@@ -229,30 +229,37 @@ export default function Home() {
             </div>
 
               {/* 核心指标展示 */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-primary/10 hover:scale-[1.05] transition-transform duration-300 ease-in-out shadow-lg hover:shadow-xl">
-                  <Clock className="w-8 h-8 text-psychology-primary mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-psychology-primary">8-15</div>
-                  <div className="text-sm text-muted-foreground">分钟快测</div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+              <div className="sri-stat-card animate-fade-in" style={{animationDelay: '0.1s'}}>
+                <div className="w-12 h-12 bg-psychology-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <Clock className="w-6 h-6 text-psychology-primary" />
                 </div>
+                <div className="text-2xl font-bold text-psychology-primary mb-1">8-15</div>
+                <div className="text-xs text-muted-foreground font-medium">分钟快测</div>
+              </div>
                 
-                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-secondary/10 hover:scale-[1.05] transition-transform duration-300 ease-in-out shadow-lg hover:shadow-xl">
-                  <BarChart3 className="w-8 h-8 text-psychology-secondary mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-psychology-secondary">4</div>
-                  <div className="text-sm text-muted-foreground">核心维度</div>
+                <div className="sri-stat-card animate-fade-in" style={{animationDelay: '0.2s'}}>
+                <div className="w-12 h-12 bg-psychology-secondary/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <BarChart3 className="w-6 h-6 text-psychology-secondary" />
                 </div>
+                <div className="text-2xl font-bold text-psychology-secondary mb-1">4</div>
+                <div className="text-xs text-muted-foreground font-medium">核心维度</div>
+              </div>
                 
-                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-accent/10 hover:scale-[1.05] transition-transform duration-300 ease-in-out shadow-lg hover:shadow-xl">
-                  <Shield className="w-8 h-8 text-psychology-accent mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-psychology-accent">100%</div>
-                  <div className="text-sm text-muted-foreground">隐私保护</div>
+                <div className="sri-stat-card animate-fade-in" style={{animationDelay: '0.3s'}}>
+                <div className="w-12 h-12 bg-psychology-accent/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <Shield className="w-6 h-6 text-psychology-accent" />
                 </div>
+                <div className="text-2xl font-bold text-psychology-accent mb-1">100%</div>
+                <div className="text-xs text-muted-foreground font-medium">隐私保护</div>
+              </div>
                 
-                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-success/10 hover:scale-[1.05] transition-transform duration-300 ease-in-out shadow-lg hover:shadow-xl">
-                  <Users className="w-8 h-8 text-psychology-success mx-auto mb-2" />
-                  <div className="text-2xl font-bold text-psychology-success">科学</div>
-                  <div className="text-sm text-muted-foreground">研究验证</div>
+                <div className="sri-stat-card animate-fade-in" style={{animationDelay: '0.4s'}}>
+                <div className="w-12 h-12 bg-psychology-success/10 rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <Users className="w-6 h-6 text-psychology-success" />
                 </div>
+                <div className="text-2xl font-bold text-psychology-success mb-1">科学</div>
+                <div className="text-xs text-muted-foreground font-medium">研究验证</div>
               </div>
             </div>
           </section>

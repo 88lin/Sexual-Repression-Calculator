@@ -134,6 +134,10 @@ body {
 @apply bg-white/80 backdrop-blur-md border-b border-psychology-neutral/40;
 }
 
+.sri-stat-card {
+@apply sri-card text-center p-6 hover:scale-[1.05] transition-transform duration-300;
+}
+
 .question-card {
 @apply sri-card p-6 space-y-4 animate-fade-in;
 }
