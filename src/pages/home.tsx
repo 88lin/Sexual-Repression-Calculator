@@ -40,7 +40,7 @@ export default function Home() {
         <div className="absolute top-24 left-8 w-8 h-8 bg-psychology-primary/15 rounded-full sri-floating-element will-change-transform"></div>
         <div className="absolute top-40 right-28 w-12 h-12 bg-psychology-accent/15 rounded-full sri-floating-element will-change-transform" style={{animationDelay: '0.8s'}}></div>
         <div className="absolute top-80 left-1/4 w-6 h-6 bg-psychology-secondary/10 rounded-full sri-floating-element will-change-transform" style={{animationDelay: '1.6s'}}></div>
-        <div className="absolute top-96 right-16 w-10 h-10 bg-psychology-accent/10 rounded-full sri-floating-element will-change-transform" style={{animationDelay: '0.4s'}}></div>
+        <div className="absolute top-96 right-16 w-10 h-10 bg-psychology-accent/15 rounded-full sri-floating-element will-change-transform" style={{animationDelay: '0.4s'}}></div>
       </div>
 
       <div className="relative z-10">
@@ -188,7 +188,7 @@ export default function Home() {
                 基于多项权威心理测量量表，助您科学认识性心理特征，促进性健康和亲密关系的发展。
               </p>
 
-              <div className="sri-card max-w-2xl mx-auto mb-6 border-blue-200 bg-blue-50/20 animate-fade-in" style={{animationDelay: '0.5s'}}>
+              <div className="sri-card max-w-2xl mx-auto mb-6 border-blue-200 bg-blue-50 animate-fade-in" style={{animationDelay: '0.5s'}}>
                 <div className="flex items-center gap-3 p-4">
                   <div className="w-10 h-10 bg-psychology-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <MessageCircleMore className="w-5 h-5 text-psychology-primary flex-shrink-0" />
