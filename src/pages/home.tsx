@@ -7,10 +7,9 @@ import React, { useState, useEffect } from 'react'; // 添加 useState 和 useEf
 import {Link} from 'react-router-dom';
 import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card';
 import {Button} from '@/components/ui/button';
-import {Badge} from '@/components/ui/badge';
 import {
     ArrowRight,
-    AlertTriangle,
+    // AlertTriangle,
     BarChart3,
     BookOpen,
     Brain,
@@ -46,10 +45,11 @@ export default function Home() {
 
       <div className="relative z-10">
         {/* 导航栏 */}
+      <nav className="sri-nav-blur sticky top-0 z-50">
         <nav className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-psychology-primary rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-psychology-primary to-psychology-primary_dark rounded-xl flex items-center justify-center shadow-soft">
                 <Brain className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -168,6 +168,7 @@ export default function Home() {
             </div>
           </div>
         </nav>
+      </nav>
 
         {/* 主要内容区域 */}
         <main className="container mx-auto px-4 pb-20">
@@ -205,7 +206,7 @@ export default function Home() {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
                 <Link to="/assessment?type=quick">
-                  <Button size="lg" className="bg-psychology-primary hover:bg-psychology-primary/90 text-white px-8 py-4 text-lg">
+                  <Button size="lg" className="bg-psychology-primary_dark hover:bg-psychology-primary_dark/90 text-white px-8 py-4 text-lg">
                     <Zap className="w-5 h-5 mr-2" />
                     开始快速测评
                     <ArrowRight className="w-5 h-5 ml-2" />
@@ -213,14 +214,14 @@ export default function Home() {
                 </Link>
                 
                 <Link to="/assessment?type=full">
-                  <Button size="lg" variant="outline" className="border-psychology-primary text-psychology-primary hover:bg-psychology-primary hover:text-white transition-colors px-8 py-4 text-lg">
+                  <Button size="lg" variant="outline" className="border-psychology-primary text-psychology-primary hover:bg-psychology-primary_dark hover:text-white transition-colors px-8 py-4 text-lg">
                     <Target className="w-5 h-5 mr-2" />
                     完整版测评
                   </Button>
                 </Link>
 
               <a href="https://sri.rstqxq.com" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" variant="outline" className="border-psychology-primary text-psychology-primary hover:bg-psychology-primary hover:text-white transition-colors px-8 py-4 text-lg">
+                <Button size="lg" variant="outline" className="border-psychology-primary text-psychology-primary hover:bg-psychology-primary_dark hover:text-white transition-colors px-8 py-4 text-lg">
                   <Crown className="w-5 h-5 mr-2" />
                   增强版测评
                 </Button>
@@ -229,25 +230,25 @@ export default function Home() {
 
               {/* 核心指标展示 */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-primary/10 hover:scale-[1.05] transition-transform duration-300 ease-in-out">
+                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-primary/10 hover:scale-[1.05] transition-transform duration-300 ease-in-out shadow-lg hover:shadow-xl">
                   <Clock className="w-8 h-8 text-psychology-primary mx-auto mb-2" />
                   <div className="text-2xl font-bold text-psychology-primary">8-15</div>
                   <div className="text-sm text-muted-foreground">分钟快测</div>
                 </div>
                 
-                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-secondary/10 hover:scale-[1.05] transition-transform duration-300 ease-in-out">
+                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-secondary/10 hover:scale-[1.05] transition-transform duration-300 ease-in-out shadow-lg hover:shadow-xl">
                   <BarChart3 className="w-8 h-8 text-psychology-secondary mx-auto mb-2" />
                   <div className="text-2xl font-bold text-psychology-secondary">4</div>
                   <div className="text-sm text-muted-foreground">核心维度</div>
                 </div>
                 
-                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-accent/10 hover:scale-[1.05] transition-transform duration-300 ease-in-out">
+                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-accent/10 hover:scale-[1.05] transition-transform duration-300 ease-in-out shadow-lg hover:shadow-xl">
                   <Shield className="w-8 h-8 text-psychology-accent mx-auto mb-2" />
                   <div className="text-2xl font-bold text-psychology-accent">100%</div>
                   <div className="text-sm text-muted-foreground">隐私保护</div>
                 </div>
                 
-                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-success/10 hover:scale-[1.05] transition-transform duration-300 ease-in-out">
+                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-success/10 hover:scale-[1.05] transition-transform duration-300 ease-in-out shadow-lg hover:shadow-xl">
                   <Users className="w-8 h-8 text-psychology-success mx-auto mb-2" />
                   <div className="text-2xl font-bold text-psychology-success">科学</div>
                   <div className="text-sm text-muted-foreground">研究验证</div>
@@ -317,7 +318,7 @@ export default function Home() {
                   </div>
 
                   <Link to="/assessment?type=quick" className="block">
-                    <Button className="w-full bg-psychology-primary hover:bg-psychology-primary/90 text-white">
+                    <Button className="w-full bg-psychology-primary_dark hover:bg-psychology-primary_dark/90 text-white">
                       开始快速测评
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
@@ -469,12 +470,12 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/assessment?type=quick">
-                  <Button size="lg" className="bg-psychology-primary hover:bg-psychology-primary/90 text-white px-8 py-4">
+                  <Button size="lg" className="bg-psychology-primary_dark hover:bg-psychology-primary_dark/90 text-white px-8 py-4">
                     <Zap className="w-5 h-5 mr-2" />
                     立即开始测评
                   </Button>
                 </Link>
-                <Button size="lg" variant="outline" asChild className="border-psychology-primary text-psychology-primary hover:bg-psychology-primary hover:text-white transition-colors px-8 py-4">
+                <Button size="lg" variant="outline" asChild className="border-psychology-primary text-psychology-primary hover:bg-psychology-primary_dark hover:text-white transition-colors px-8 py-4">
                   <Link to="/guide">
                     <BookOpen className="w-5 h-5 mr-2" />
                     了解更多信息

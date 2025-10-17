@@ -66,6 +66,8 @@ ring: "hsl(var(--sidebar-ring))",
 // 专业心理测评配色方案
 psychology: {
 primary: "hsl(217, 91%, 60%)", // 更现代的蓝色主色
+primary_light: "hsl(217, 91%, 75%)", // 浅一些的主色
+primary_dark: "hsl(217, 91%, 45%)", // 深一些的主色
 secondary: "hsl(198, 93%, 50%)", // 清新的蓝绿色辅色 
 accent: "hsl(276, 88%, 75%)", // 柔和的紫色强调
 calm: "hsl(208, 25%, 97%)", // 更柔和的冷静背景
@@ -73,6 +75,8 @@ warm: "hsl(32, 85%, 96%)", // 更温暖的背景
 success: "hsl(142, 76%, 36%)", // 更专业的成功绿
 warning: "hsl(35, 85%, 48%)", // 更温暖的警告橙
 danger: "hsl(0, 79%, 58%)", // 更柔和的危险红
+neutral: "hsl(220, 15%, 95%)", // 中性背景
+neutral_dark: "hsl(220, 15%, 85%)", // 深中性色
 },
 },
 borderRadius: {

@@ -363,7 +363,7 @@ const handleProgressDialogOpenChange = (open: boolean) => {
             </AlertDialogCancel>
             <AlertDialogAction
               onClick={handleContinueProgress}
-              className="w-full sm:w-auto bg-psychology-primary hover:bg-psychology-primary/90 transition-transform hover:scale-[1.02]"
+              className="w-full sm:w-auto bg-psychology-primary_dark hover:bg-psychology-primary_dark/90 transition-transform hover:scale-[1.02]"
             >
               继续作答
             </AlertDialogAction>
@@ -371,7 +371,7 @@ const handleProgressDialogOpenChange = (open: boolean) => {
         </AlertDialogContent>
       </AlertDialog>
       {/* 顶部导航 */}
-      <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-muted">
+      <nav className="sticky top-0 z-50 sri-nav-blur">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">

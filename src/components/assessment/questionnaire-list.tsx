@@ -609,7 +609,7 @@ const getResponseForQuestion = useCallback((id: string) => {
                 )}
                 <Button
                   onClick={handleComplete}
-                  className="bg-psychology-primary hover:bg-psychology-primary/90 px-8 transition-all hover:scale-105"
+                  className="bg-psychology-primary_dark hover:bg-psychology-primary_dark/90 px-8 transition-all hover:scale-105"
                   size="lg"
                 >
                   完成评估并查看结果
