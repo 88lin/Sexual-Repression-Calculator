@@ -65,14 +65,14 @@ ring: "hsl(var(--sidebar-ring))",
 },
 // 专业心理测评配色方案
 psychology: {
-primary: "hsl(220, 90%, 56%)", // 深蓝主色
-secondary: "hsl(200, 95%, 45%)", // 浅蓝辅色  
-accent: "hsl(280, 100%, 70%)", // 紫色强调
-calm: "hsl(210, 20%, 98%)", // 冷静背景
-warm: "hsl(35, 100%, 95%)", // 温暖背景
-success: "hsl(142, 71%, 45%)", // 成功绿
-warning: "hsl(38, 92%, 50%)", // 警告橙
-danger: "hsl(0, 84%, 60%)", // 危险红
+primary: "hsl(217, 91%, 60%)", // 更现代的蓝色主色
+secondary: "hsl(198, 93%, 50%)", // 清新的蓝绿色辅色 
+accent: "hsl(276, 88%, 75%)", // 柔和的紫色强调
+calm: "hsl(208, 25%, 97%)", // 更柔和的冷静背景
+warm: "hsl(32, 85%, 96%)", // 更温暖的背景
+success: "hsl(142, 76%, 36%)", // 更专业的成功绿
+warning: "hsl(35, 85%, 48%)", // 更温暖的警告橙
+danger: "hsl(0, 79%, 58%)", // 更柔和的危险红
 },
 },
 borderRadius: {
@@ -98,7 +98,7 @@ height: "0",
 },
 },
 "fade-in": {
-"0%": { opacity: "0", transform: "translateY(10px)" },
+"0%": { opacity: "0", transform: "translateY(20px)" },
 "100%": { opacity: "1", transform: "translateY(0)" },
 },
 "pulse-scale": {
@@ -113,8 +113,9 @@ animation: {
 "pulse-scale": "pulse-scale 2s ease-in-out infinite",
 },
 fontFamily: {
-sans: ["Inter", "system-ui", "sans-serif"],
-mono: ["Fira Code", "monospace"],
+sans: ["Inter", "Noto Sans SC", "system-ui", "sans-serif"],
+display: ["Inter", "Noto Sans SC", "system-ui", "sans-serif"],
+mono: ["JetBrains Mono", "Fira Code", "monospace"],
 },
 },
 },

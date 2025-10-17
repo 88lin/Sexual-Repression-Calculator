@@ -117,6 +117,14 @@ body {
 @apply w-full px-4 py-3 border border-input rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-psychology-primary focus:border-transparent transition-all duration-200;
 }
 
+.sri-floating-element {
+@apply animate-float;
+}
+
+.sri-gradient-hero {
+@apply bg-gradient-to-br from-psychology-calm/90 via-white to-psychology-warm/80 transition-all duration-700 ease-in-out;
+}
+
 .question-card {
 @apply sri-card p-6 space-y-4 animate-fade-in;
 }

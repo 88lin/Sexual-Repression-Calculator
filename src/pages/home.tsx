@@ -34,13 +34,15 @@ export default function Home() {
 
   return (
   <div
-    className="min-h-screen bg-gradient-to-br from-psychology-calm/90 via-white to-psychology-warm/80 transition-colors duration-500">
+    className="min-h-screen sri-gradient-hero relative">
       {/* 背景装饰 */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-20 w-8 h-8 bg-psychology-primary/10 rounded-full"></div>
-        <div className="absolute top-40 right-32 w-12 h-12 bg-psychology-accent/10 rounded-full"></div>
-        <div className="absolute bottom-40 left-1/4 w-6 h-6 bg-psychology-secondary/10 rounded-full"></div>
-        <div className="absolute bottom-32 right-20 w-10 h-10 bg-psychology-primary/5 rounded-full"></div>
+        <div className="absolute top-20 left-20 w-8 h-8 bg-psychology-primary/10 rounded-full sri-floating-element"></div>
+        <div className="absolute top-40 right-32 w-12 h-12 bg-psychology-accent/15 rounded-full sri-floating-element" style={{animationDelay: '1s'}}></div>
+        <div className="absolute bottom-40 left-1/4 w-6 h-6 bg-psychology-secondary/10 rounded-full sri-floating-element" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-32 right-20 w-10 h-10 bg-psychology-primary/8 rounded-full sri-floating-element" style={{animationDelay: '0.5s'}}></div>
+        <div className="absolute top-1/3 left-1/6 w-16 h-16 bg-psychology-gradient_2/5 rounded-full sri-glow-effect"></div>
+        <div className="absolute bottom-1/3 right-1/6 w-20 h-20 bg-psychology-gradient_3/4 rounded-full sri-glow-effect" style={{animationDelay: '1s'}}></div>
       </div>
 
       <div className="relative z-10">
