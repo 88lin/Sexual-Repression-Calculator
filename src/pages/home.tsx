@@ -39,8 +39,8 @@ export default function Home() {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-24 left-8 w-8 h-8 bg-psychology-primary/15 rounded-full sri-floating-element will-change-transform"></div>
         <div className="absolute top-40 right-28 w-12 h-12 bg-psychology-accent/15 rounded-full sri-floating-element will-change-transform" style={{animationDelay: '0.8s'}}></div>
-        <div className="absolute top-72 left-1/4 w-6 h-6 bg-psychology-secondary/10 rounded-full sri-floating-element will-change-transform" style={{animationDelay: '1.6s'}}></div>
-        <div className="absolute top-80 right-16 w-10 h-10 bg-psychology-accent/10 rounded-full sri-floating-element will-change-transform" style={{animationDelay: '0.4s'}}></div>
+        <div className="absolute top-80 left-1/4 w-6 h-6 bg-psychology-secondary/10 rounded-full sri-floating-element will-change-transform" style={{animationDelay: '1.6s'}}></div>
+        <div className="absolute top-96 right-16 w-10 h-10 bg-psychology-accent/10 rounded-full sri-floating-element will-change-transform" style={{animationDelay: '0.4s'}}></div>
       </div>
 
       <div className="relative z-10">
@@ -188,7 +188,7 @@ export default function Home() {
                 基于多项权威心理测量量表，助您科学认识性心理特征，促进性健康和亲密关系的发展。
               </p>
 
-              {/* <div className="bg-gradient-to-r from-psychology-primary/10 to-psychology-primary_light/10 p-4 rounded-xl border border-psychology-primary/20 max-w-2xl mx-auto mb-8">
+              <div className="bg-gradient-to-r from-psychology-primary/10 to-psychology-primary_light/10 p-4 rounded-xl border border-psychology-primary/20 max-w-2xl mx-auto mb-8">
                 <div className="flex items-center justify-center gap-2 text-center">
                   <MessageCircleMore className="w-8 h-8 text-psychology-primary" />
                   <p className="text-sm sm:text-base text-psychology-primary font-medium">
@@ -204,29 +204,7 @@ export default function Home() {
                     后台留言。
                   </p>
                 </div>
-              </div> */}
-
-              {/* 公告框（配色统一版） */}
-<div className="bg-psychology-primary/5 border border-psychology-primary/20 rounded-xl p-4 mb-8 max-w-3xl mx-auto">
-  <div className="flex items-center justify-center gap-2 text-center">
-    <div className="w-8 h-8 bg-psychology-primary/10 rounded-full flex items-center justify-center">
-      <MessageCircleMore className="w-5 h-5 text-psychology-primary" />
-    </div>
-    <p className="text-sm sm:text-base text-psychology-primary font-medium">
-      本站完全免费，有任何问题都可以在
-      <a
-        href="https://home.nuaa.tech/gzh/index.html"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="font-semibold text-psychology-primary_dark hover:text-psychology-accent transition-colors ml-1"
-      >
-        微信公众号
-      </a>
-      后台留言。
-    </p>
-  </div>
-</div>
-
+              </div>
               
               {/* 适应性评估亮点 */}
               <div className="bg-psychology-primary/5 border border-psychology-primary/20 rounded-xl p-6 mb-8 max-w-3xl mx-auto">
