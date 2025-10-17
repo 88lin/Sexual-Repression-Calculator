@@ -268,10 +268,7 @@ export default function Home() {
               {/* 快测版 */}
               <Card className="sri-card relative overflow-hidden group hover:shadow-xl transition-all duration-300">
                 <div className="absolute top-4 right-4">
-                  <div className="sri-hero-badge">
-                    <Star className="w-4 h-4 mr-1" />
-                    推荐
-                  </div>
+                  <Badge className="bg-psychology-primary text-white">推荐</Badge>
                 </div>
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-3 mb-4">
