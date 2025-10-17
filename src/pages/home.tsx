@@ -175,7 +175,7 @@ export default function Home() {
           {/* 英雄区域 */}
           <section className="text-center mb-16">
             <div className="max-w-4xl mx-auto">
-              <div className="sri-hero-badge mb-6 animate-fade-in" style={{animationDelay: '0.2s'}}>
+              <div className="sri-hero-badge mb-6">
                 <Heart className="w-5 h-5 mr-2" />
                 基于科学研究的心理测评工具
               </div>
@@ -188,13 +188,13 @@ export default function Home() {
                 基于多项权威心理测量量表，助您科学认识性心理特征，促进性健康和亲密关系的发展。
               </p>
 
-              <div className="sri-card max-w-2xl mx-auto mb-6 border-blue-200 bg-blue-50 animate-fade-in" style={{animationDelay: '0.5s'}}>
+              <div className="sri-card max-w-2xl mx-auto mb-6 border-blue-200 bg-blue-50/20 animate-fade-in" style={{animationDelay: '0.5s'}}>
                 <div className="flex items-center gap-3 p-4">
                   <div className="w-10 h-10 bg-psychology-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <MessageCircleMore className="w-5 h-5 text-psychology-primary flex-shrink-0" />
                   </div>
                   <p className="text-sm sm:text-base text-psychology-primary font-medium">
-                    本站完全免费，有任何问题都可以在
+                    本站完全免费，使用过程中有任何问题都可以在
                     <a 
                       href="https://home.nuaa.tech/gzh/index.html" 
                       target="_blank" 
