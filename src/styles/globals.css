@@ -119,15 +119,15 @@ body {
 }
 
 .sri-floating-element {
-@apply animate-float;
-}
-
-.sri-glow-effect {
-@apply animate-glow;
+@apply animate-float will-change-transform transition-transform duration-700 ease-in-out;
 }
 
 .sri-gradient-hero {
 @apply bg-gradient-to-br from-psychology-calm/90 via-white to-psychology-warm/80 transition-all duration-700 ease-in-out;
+}
+
+.sri-hero-badge {
+@apply inline-flex items-center px-4 py-2 bg-psychology-primary/10 text-psychology-primary border border-psychology-primary/30 rounded-full text-sm font-medium;
 }
 
 .question-card {

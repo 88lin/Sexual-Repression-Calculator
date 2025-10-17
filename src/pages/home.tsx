@@ -34,15 +34,13 @@ export default function Home() {
 
   return (
   <div
-    className="min-h-screen sri-gradient-hero relative">
+    className="relative min-h-screen sri-gradient-hero overflow-hidden">
       {/* 背景装饰 */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-20 w-8 h-8 bg-psychology-primary/10 rounded-full sri-floating-element"></div>
-        <div className="absolute top-40 right-32 w-12 h-12 bg-psychology-accent/15 rounded-full sri-floating-element" style={{animationDelay: '1s'}}></div>
-        <div className="absolute bottom-40 left-1/4 w-6 h-6 bg-psychology-secondary/10 rounded-full sri-floating-element" style={{animationDelay: '2s'}}></div>
-        <div className="absolute bottom-32 right-20 w-10 h-10 bg-psychology-primary/8 rounded-full sri-floating-element" style={{animationDelay: '0.5s'}}></div>
-        <div className="absolute top-1/3 left-1/6 w-16 h-16 bg-psychology-gradient_2/5 rounded-full sri-glow-effect"></div>
-        <div className="absolute bottom-1/3 right-1/6 w-20 h-20 bg-psychology-gradient_3/4 rounded-full sri-glow-effect" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-20 left-20 w-8 h-8 bg-psychology-primary/10 rounded-full sri-floating-element will-change-transform"></div>
+        <div className="absolute top-40 right-32 w-12 h-12 bg-psychology-accent/15 rounded-full sri-floating-element will-change-transform" style={{animationDelay: '0.8s'}}></div>
+        <div className="absolute bottom-40 left-1/4 w-6 h-6 bg-psychology-secondary/10 rounded-full sri-floating-element will-change-transform" style={{animationDelay: '1.6s'}}></div>
+        <div className="absolute bottom-32 right-20 w-10 h-10 bg-psychology-primary/8 rounded-full sri-floating-element will-change-transform" style={{animationDelay: '0.4s'}}></div>
       </div>
 
       <div className="relative z-10">
@@ -175,10 +173,10 @@ export default function Home() {
           {/* 英雄区域 */}
           <section className="text-center mb-20">
             <div className="max-w-4xl mx-auto">
-              <Badge className="mb-6 bg-psychology-primary/10 text-psychology-primary border-psychology-primary/20">
-                <Heart className="w-4 h-4 mr-2" />
+              <div className="sri-hero-badge mb-6 animate-fade-in" style={{animationDelay: '0.2s'}}>
+                <Heart className="w-5 h-5 mr-2" />
                 基于科学研究的心理测评工具
-              </Badge>
+              </div>
               
               <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-psychology-primary via-psychology-secondary to-psychology-accent bg-clip-text text-transparent">
                 性压抑指数计算器
