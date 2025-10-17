@@ -228,25 +228,25 @@ export default function Home() {
 
               {/* 核心指标展示 */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-primary/10 hover:scale-[1.05] transition-transform duration-300 ease-in-out">
+                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-primary/10">
                   <Clock className="w-8 h-8 text-psychology-primary mx-auto mb-2" />
                   <div className="text-2xl font-bold text-psychology-primary">8-15</div>
                   <div className="text-sm text-muted-foreground">分钟快测</div>
                 </div>
                 
-                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-secondary/10 hover:scale-[1.05] transition-transform duration-300 ease-in-out">
+                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-secondary/10">
                   <BarChart3 className="w-8 h-8 text-psychology-secondary mx-auto mb-2" />
                   <div className="text-2xl font-bold text-psychology-secondary">4</div>
                   <div className="text-sm text-muted-foreground">核心维度</div>
                 </div>
                 
-                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-accent/10 hover:scale-[1.05] transition-transform duration-300 ease-in-out">
+                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-accent/10">
                   <Shield className="w-8 h-8 text-psychology-accent mx-auto mb-2" />
                   <div className="text-2xl font-bold text-psychology-accent">100%</div>
                   <div className="text-sm text-muted-foreground">隐私保护</div>
                 </div>
                 
-                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-success/10 hover:scale-[1.05] transition-transform duration-300 ease-in-out">
+                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-success/10">
                   <Users className="w-8 h-8 text-psychology-success mx-auto mb-2" />
                   <div className="text-2xl font-bold text-psychology-success">科学</div>
                   <div className="text-sm text-muted-foreground">研究验证</div>
