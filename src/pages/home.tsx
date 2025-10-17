@@ -37,10 +37,10 @@ export default function Home() {
     className="relative min-h-screen sri-gradient-hero">
       {/* 背景装饰 */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-24 left-10 w-8 h-8 bg-psychology-primary/15 rounded-full sri-floating-element will-change-transform"></div>
+        <div className="absolute top-24 left-8 w-8 h-8 bg-psychology-primary/15 rounded-full sri-floating-element will-change-transform"></div>
         <div className="absolute top-40 right-32 w-12 h-12 bg-psychology-accent/15 rounded-full sri-floating-element will-change-transform" style={{animationDelay: '0.8s'}}></div>
-        <div className="absolute top-64 left-1/4 w-6 h-6 bg-psychology-secondary/15 rounded-full sri-floating-element will-change-transform" style={{animationDelay: '1.6s'}}></div>
-        <div className="absolute top-96 right-20 w-10 h-10 bg-psychology-primary/12 rounded-full sri-floating-element will-change-transform" style={{animationDelay: '0.4s'}}></div>
+        <div className="absolute top-72 left-1/4 w-6 h-6 bg-psychology-secondary/15 rounded-full sri-floating-element will-change-transform" style={{animationDelay: '1.6s'}}></div>
+        <div className="absolute top-96 right-24 w-10 h-10 bg-psychology-primary_dark/12 rounded-full sri-floating-element will-change-transform" style={{animationDelay: '0.4s'}}></div>
       </div>
 
       <div className="relative z-10">
