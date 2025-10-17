@@ -190,7 +190,9 @@ export default function Home() {
 
               <div className="bg-gradient-to-r from-psychology-primary/10 to-psychology-primary_light/10 p-4 rounded-xl border border-psychology-primary/20 max-w-2xl mx-auto mb-8">
                 <div className="flex items-center justify-center gap-2 text-center">
-                  <MessageCircleMore className="w-8 h-8 text-psychology-primary" />
+                  <div className="w-10 h-10 bg-psychology-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <MessageCircleMore className="w-6 h-6 text-psychology-primary" />
+                  </div>
                   <p className="text-sm sm:text-base text-psychology-primary font-medium">
                     本站完全免费，有任何问题都可以在
                     <a 
