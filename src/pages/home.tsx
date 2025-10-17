@@ -20,6 +20,7 @@ import {
     Heart,
     History,
     Shield,
+    Star,
     Target,
     Github,
     Menu,
@@ -228,25 +229,25 @@ export default function Home() {
 
               {/* 核心指标展示 */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-primary/10">
+                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-primary/10 hover:scale-[1.05] transition-transform duration-300 ease-in-out">
                   <Clock className="w-8 h-8 text-psychology-primary mx-auto mb-2" />
                   <div className="text-2xl font-bold text-psychology-primary">8-15</div>
                   <div className="text-sm text-muted-foreground">分钟快测</div>
                 </div>
                 
-                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-secondary/10">
+                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-secondary/10 hover:scale-[1.05] transition-transform duration-300 ease-in-out">
                   <BarChart3 className="w-8 h-8 text-psychology-secondary mx-auto mb-2" />
                   <div className="text-2xl font-bold text-psychology-secondary">4</div>
                   <div className="text-sm text-muted-foreground">核心维度</div>
                 </div>
                 
-                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-accent/10">
+                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-accent/10 hover:scale-[1.05] transition-transform duration-300 ease-in-out">
                   <Shield className="w-8 h-8 text-psychology-accent mx-auto mb-2" />
                   <div className="text-2xl font-bold text-psychology-accent">100%</div>
                   <div className="text-sm text-muted-foreground">隐私保护</div>
                 </div>
                 
-                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-success/10">
+                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-success/10 hover:scale-[1.05] transition-transform duration-300 ease-in-out">
                   <Users className="w-8 h-8 text-psychology-success mx-auto mb-2" />
                   <div className="text-2xl font-bold text-psychology-success">科学</div>
                   <div className="text-sm text-muted-foreground">研究验证</div>
@@ -268,7 +269,10 @@ export default function Home() {
               {/* 快测版 */}
               <Card className="sri-card relative overflow-hidden group hover:shadow-xl transition-all duration-300">
                 <div className="absolute top-4 right-4">
-                  <Badge className="bg-psychology-primary text-white">推荐</Badge>
+                  <div className="sri-hero-badge">
+                    <Star className="w-4 h-4 mr-1" />
+                    推荐
+                  </div>
                 </div>
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-3 mb-4">
@@ -283,31 +287,31 @@ export default function Home() {
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="space-y-3">
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                      <span className="text-sm">SIS/SES-SF 14项量表</span>
+                    <div className="flex items-center gap-2 p-2 bg-psychology-primary/5 rounded-lg">
+                      <CheckCircle className="w-5 h-5 text-psychology-success flex-shrink-0" />
+                      <span className="text-sm font-medium">SIS/SES-SF 14项量表</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                      <span className="text-sm">Mosher性内疚10项简版</span>
+                    <div className="flex items-center gap-2 p-2 bg-psychology-primary/5 rounded-lg">
+                      <CheckCircle className="w-5 h-5 text-psychology-success flex-shrink-0" />
+                      <span className="text-sm font-medium">Mosher性内疚10项简版</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                      <span className="text-sm">KISS-9性羞耻量表</span>
+                    <div className="flex items-center gap-2 p-2 bg-psychology-primary/5 rounded-lg">
+                      <CheckCircle className="w-5 h-5 text-psychology-success flex-shrink-0" />
+                      <span className="text-sm font-medium">KISS-9性羞耻量表</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                      <span className="text-sm">SOS性观感筛查版</span>
+                    <div className="flex items-center gap-2 p-2 bg-psychology-primary/5 rounded-lg">
+                      <CheckCircle className="w-5 h-5 text-psychology-success flex-shrink-0" />
+                      <span className="text-sm font-medium">SOS性观感筛查版</span>
                     </div>
                   </div>
 
-                  <div className="bg-psychology-primary/5 p-4 rounded-lg">
+                  <div className="bg-gradient-to-r from-psychology-primary/10 to-psychology-primary_light/10 p-4 rounded-xl border border-psychology-primary/20">
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm font-medium">预计用时</span>
+                      <span className="text-sm font-semibold text-psychology-primary">预计用时</span>
                       <span className="text-sm text-psychology-primary font-bold">8-15 分钟</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium">题目数量</span>
+                      <span className="text-sm font-semibold text-psychology-primary">题目数量</span>
                       <span className="text-sm text-psychology-primary font-bold">33-42 题</span>
                     </div>
                   </div>
@@ -329,38 +333,38 @@ export default function Home() {
                       <Target className="w-6 h-6 text-psychology-secondary" />
                     </div>
                     <div>
-                      <CardTitle className="text-xl text-psychology-secondary">完整测评版</CardTitle>
-                      <p className="text-sm text-muted-foreground">更全面深入的专业分析</p>
+                      <CardTitle className="text-xl font-bold text-psychology-secondary mb-1">完整测评版</CardTitle>
+                      <p className="text-sm text-muted-foreground font-medium">更全面深入的专业分析</p>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="space-y-3">
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                      <span className="text-sm">完整版SIS/SES量表</span>
+                    <div className="flex items-center gap-2 p-2 bg-psychology-secondary/5 rounded-lg">
+                      <CheckCircle className="w-5 h-5 text-psychology-success flex-shrink-0" />
+                      <span className="text-sm font-medium">完整版SIS/SES量表</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                      <span className="text-sm">完整Mosher性内疚量表</span>
+                    <div className="flex items-center gap-2 p-2 bg-psychology-secondary/5 rounded-lg">
+                      <CheckCircle className="w-5 h-5 text-psychology-success flex-shrink-0" />
+                      <span className="text-sm font-medium">完整Mosher性内疚量表</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                      <span className="text-sm">KISS-9 + 额外维度分析</span>
+                    <div className="flex items-center gap-2 p-2 bg-psychology-secondary/5 rounded-lg">
+                      <CheckCircle className="w-5 h-5 text-psychology-success flex-shrink-0" />
+                      <span className="text-sm font-medium">KISS-9 + 额外维度分析</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                      <span className="text-sm">BSAS性态度量表校标</span>
+                    <div className="flex items-center gap-2 p-2 bg-psychology-secondary/5 rounded-lg">
+                      <CheckCircle className="w-5 h-5 text-psychology-success flex-shrink-0" />
+                      <span className="text-sm font-medium">BSAS性态度量表校标</span>
                     </div>
                   </div>
 
-                  <div className="bg-psychology-secondary/5 p-4 rounded-lg">
+                  <div className="bg-gradient-to-r from-psychology-secondary/10 to-psychology-secondary/10 p-4 rounded-xl border border-psychology-secondary/20">
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm font-medium">预计用时</span>
+                      <span className="text-sm font-semibold text-psychology-secondary">预计用时</span>
                       <span className="text-sm text-psychology-secondary font-bold">25-40 分钟</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium">题目数量</span>
+                      <span className="text-sm font-semibold text-psychology-secondary">题目数量</span>
                       <span className="text-sm text-psychology-secondary font-bold">58-126 题</span>
                     </div>
                   </div>
