@@ -37,7 +37,7 @@ export default function Home() {
     className="relative min-h-screen sri-gradient-hero">
       {/* 背景装饰 */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-24 left-16 w-8 h-8 bg-psychology-primary/10 rounded-full sri-floating-element will-change-transform"></div>
+        <div className="absolute top-24 left-10 w-8 h-8 bg-psychology-primary/10 rounded-full sri-floating-element will-change-transform"></div>
         <div className="absolute top-40 right-32 w-12 h-12 bg-psychology-accent/15 rounded-full sri-floating-element will-change-transform" style={{animationDelay: '0.8s'}}></div>
         <div className="absolute bottom-40 left-1/4 w-6 h-6 bg-psychology-secondary/10 rounded-full sri-floating-element will-change-transform" style={{animationDelay: '1.6s'}}></div>
         <div className="absolute bottom-32 right-20 w-10 h-10 bg-psychology-primary/8 rounded-full sri-floating-element will-change-transform" style={{animationDelay: '0.4s'}}></div>
@@ -173,7 +173,7 @@ export default function Home() {
         {/* 主要内容区域 */}
         <main className="container mx-auto px-4 pb-20">
           {/* 英雄区域 */}
-          <section className="text-center mb-18">
+          <section className="text-center mb-16">
             <div className="max-w-4xl mx-auto">
               <div className="sri-hero-badge mb-6 animate-fade-in" style={{animationDelay: '0.2s'}}>
                 <Heart className="w-5 h-5 mr-2" />
