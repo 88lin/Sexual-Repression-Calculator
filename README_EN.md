@@ -75,7 +75,7 @@ This project is optimized for Cloudflare Pages deployment and can be easily depl
    - Output directory: `dist`
 5. Click Deploy
 
-### [Cloudflare](https://dash.cloudflare.com/) | [demo](https://sextest.nuaa.tech)
+### [Cloudflare](https://dash.cloudflare.com/) | [demo](https://sri.nuaa.tech)
 
 ### Notes
 

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemapp: https://sextest.nuaa.tech/sitemap.xml
+Sitemapp: https://sri.nuaa.tech/sitemap.xml

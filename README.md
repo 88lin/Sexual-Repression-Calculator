@@ -75,7 +75,7 @@ docker run -p 8000:8000 appe233/sexual-repression-calculator
    - 输出目录: `dist`
 5. 点击部署
 
-### [Cloudflare](https://dash.cloudflare.com/) | [在线体验](https://sextest.nuaa.tech/)
+### [Cloudflare](https://dash.cloudflare.com/) | [在线体验](https://sri.nuaa.tech/)
 
 ## ▲ Vercel 部署
 
