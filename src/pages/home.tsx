@@ -228,25 +228,25 @@ export default function Home() {
 
               {/* 核心指标展示 */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-primary/10">
+                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-primary/10 hover:scale-[1.05] transition-transform duration-300 ease-in-out">
                   <Clock className="w-8 h-8 text-psychology-primary mx-auto mb-2" />
                   <div className="text-2xl font-bold text-psychology-primary">8-15</div>
                   <div className="text-sm text-muted-foreground">分钟快测</div>
                 </div>
                 
-                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-secondary/10">
+                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-secondary/10 hover:scale-[1.05] transition-transform duration-300 ease-in-out">
                   <BarChart3 className="w-8 h-8 text-psychology-secondary mx-auto mb-2" />
                   <div className="text-2xl font-bold text-psychology-secondary">4</div>
                   <div className="text-sm text-muted-foreground">核心维度</div>
                 </div>
                 
-                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-accent/10">
+                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-accent/10 hover:scale-[1.05] transition-transform duration-300 ease-in-out">
                   <Shield className="w-8 h-8 text-psychology-accent mx-auto mb-2" />
                   <div className="text-2xl font-bold text-psychology-accent">100%</div>
                   <div className="text-sm text-muted-foreground">隐私保护</div>
                 </div>
                 
-                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-success/10">
+                <div className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-psychology-success/10 hover:scale-[1.05] transition-transform duration-300 ease-in-out">
                   <Users className="w-8 h-8 text-psychology-success mx-auto mb-2" />
                   <div className="text-2xl font-bold text-psychology-success">科学</div>
                   <div className="text-sm text-muted-foreground">研究验证</div>
@@ -268,7 +268,10 @@ export default function Home() {
               {/* 快测版 */}
               <Card className="sri-card relative overflow-hidden group hover:shadow-xl transition-all duration-300">
                 <div className="absolute top-4 right-4">
-                  <Badge className="bg-psychology-primary text-white">推荐</Badge>
+                  <div className="sri-hero-badge">
+                    <Star className="w-4 h-4 mr-1" />
+                    推荐
+                  </div>
                 </div>
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-4">

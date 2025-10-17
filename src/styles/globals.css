@@ -119,7 +119,7 @@ body {
 }
 
 .sri-floating-element {
-@apply animate-float will-change-transform transition-transform duration-700 ease-in-out;
+@apply animate-float will-change-transform;
 }
 
 .sri-gradient-hero {

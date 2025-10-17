@@ -507,7 +507,7 @@ const handleProgressDialogOpenChange = (open: boolean) => {
                 <span className="hidden sm:inline">您的所有回答都会安全地保存在本地设备上</span>
                 <span className="sm:hidden">数据安全保存</span>
               </div>
-              <div className="text-xs sm:text-sm text-muted-foreground">
+              <div className="sri-hero-badge">
                 已回答: {responses.length} 题
               </div>
             </div>
