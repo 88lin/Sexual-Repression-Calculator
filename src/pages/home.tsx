@@ -199,11 +199,11 @@ export default function Home() {
                       href="https://home.nuaa.tech/gzh/index.html" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="font-semibold text-psychology-primary_dark hover:text-psychology-accent transition-colors ml-1"
+                      className="font-semibold text-psychology-primary_dark hover:text-psychology-accent transition-colors ml-1 mr-1"
                     >
                       微信公众号
                     </a>
-                     后台留言。
+                    后台留言。
                   </p>
                 </div>
               </div>
