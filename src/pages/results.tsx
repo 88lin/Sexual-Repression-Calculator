@@ -285,7 +285,7 @@ export default function Results() {
                 onClick={() => navigate('/')}
                 className="text-muted-foreground"
               >
-                <Home className="w-4 h-4 mr-2" />
+                <Home className="w-5 h-5 mr-1" />
                 首页
               </Button>
               <div className="flex items-center gap-2">
