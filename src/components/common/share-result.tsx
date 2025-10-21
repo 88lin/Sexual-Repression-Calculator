@@ -88,7 +88,7 @@ export function ShareResult({ session, variant = "outline", size = "default", cl
             className={`flex items-center gap-2 ${className}`}
           >
             <Share2 className="text-muted-foreground w-4 h-4 mr-2" />
-            <span className="text-muted-foreground hidden sm:flex">分享结果</span> 
+            <span className="text-muted-foreground hidden sm:flex">分享结果</span>
           </Button>
         </DialogTrigger>
         

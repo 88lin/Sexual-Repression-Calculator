@@ -278,14 +278,14 @@ export default function Results() {
       <nav className="sticky top-0 z-50 sri-nav-blur">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => navigate('/')}
                 className="text-muted-foreground"
               >
-                <Home className="w-5 h-5 mr-1" />
+                <Home className="w-5 h-5" />
                 首页
               </Button>
               <div className="flex items-center gap-1">
