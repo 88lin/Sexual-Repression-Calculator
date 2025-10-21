@@ -288,7 +288,7 @@ export default function Results() {
                 <Home className="w-5 h-5 mr-1" />
                 首页
               </Button>
-              <div className="flex items-center gap-1">
+              <div className="flex items-center gap-2">
                 <Brain className="w-5 h-5 text-psychology-primary" />
                 <span className="font-semibold text-psychology-primary">
                   评估结果
@@ -296,7 +296,7 @@ export default function Results() {
               </div>
             </div>
 
-            <div className="flex gap-1">
+            <div className="flex gap-2">
               {/* 分享按钮 */}
               {isMobile ? (
                 <ShareButtonMobile session={session} />
@@ -310,7 +310,7 @@ export default function Results() {
                 onClick={handleDownload}
                 className="text-muted-foreground hidden sm:flex"
               >
-                <Download className="w-4 h-4 mr-1" />
+                <Download className="w-4 h-4 mr-2" />
                 导出结果
               </Button>
               <Button
@@ -327,7 +327,7 @@ export default function Results() {
                 onClick={handleRetake}
                 className="text-muted-foreground hidden sm:flex"
               >
-                <RefreshCw className="w-4 h-4 mr-1" />
+                <RefreshCw className="w-4 h-4 mr-2" />
                 重新测评
               </Button>
               <Button
