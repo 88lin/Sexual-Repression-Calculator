@@ -104,19 +104,6 @@ export default function Home() {
                       </a>
                     </Button>
                   </SheetClose>
-                  <SheetClose asChild>
-                    <Button variant="ghost" size="sm" asChild className="justify-start">
-                      <a 
-                        href="https://github.com/88lin/Sexual-Repression-Calculator"
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2"
-                      >
-                        <Github className="w-4 h-4" />
-                        GitHub仓库
-                      </a>
-                    </Button>
-                  </SheetClose>
                   </div>
                 </SheetContent>
               </Sheet>
@@ -151,18 +138,6 @@ export default function Home() {
                 >
                   <MessageCircleMore className="w-4 h-4" />
                   <span className="text-[10px] sm:text-sm whitespace-nowrap">微信公众号</span>
-                </a>
-              </Button>
-              {/* GitHub 按钮 */}
-              <Button variant="ghost" size="sm" asChild className="h-auto py-1.5">
-                <a 
-                  href="https://github.com/88lin/Sexual-Repression-Calculator" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex flex-col sm:flex-row items-center gap-0.5 sm:gap-2"
-                >
-                  <Github className="w-4 h-4" />
-                  <span className="text-[10px] sm:text-sm whitespace-nowrap">GitHub仓库</span>
                 </a>
               </Button>
             </div>
