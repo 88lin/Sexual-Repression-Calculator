@@ -303,7 +303,7 @@ export default function Home() {
                     推荐
                   </div>
                 </div>
-                <CardHeader className="pb-4">
+                <CardHeader>
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-12 h-12 bg-psychology-primary/10 rounded-lg flex items-center justify-center">
                       <Zap className="w-6 h-6 text-psychology-primary" />
