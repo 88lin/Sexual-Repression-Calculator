@@ -21,7 +21,7 @@ import {
     Shield,
     Star,
     Target,
-    Github,
+    // Github,
     Menu,
     MessageCircleMore,
     Users,
@@ -169,7 +169,7 @@ export default function Home() {
                     <MessageCircleMore className="w-5 h-5 text-psychology-primary flex-shrink-0" />
                   </div>
                   <p className="text-sm sm:text-base text-psychology-primary font-medium">
-                    本站完全免费，使用过程中有任何问题都可以在
+                    本站完全免费，体验恋爱占有欲测试、问题反馈前往
                     <a 
                       href="https://home.nuaa.tech/gzh/index.html" 
                       target="_blank" 
